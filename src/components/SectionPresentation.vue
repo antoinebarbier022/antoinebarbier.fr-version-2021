@@ -42,7 +42,7 @@
 
 <script>
     export default {
-        name: 'Presentation'
+        name: 'SectionPresentation'
     }
 </script>
 
@@ -79,8 +79,6 @@ font-weight: lighter;
 
     .presentation-content{
         position: relative;
-        margin:15px 15px 0 15px;
-        
     }
 
     .presentation-content .content{

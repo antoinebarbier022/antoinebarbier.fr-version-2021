@@ -1,7 +1,6 @@
 <template>
-
-    <a onclick="window.alert('Le détail du projet n\'est pas disponible. À bientot ! ');">
-        
+<!--onclick="window.alert('Le détail du projet n\'est pas disponible. À bientot ! ');"-->
+    <router-link to="/project">
         <div class="slide">
             <figure>
                 <img v-bind:src="require(`../../assets/images/${project_item_prop.urlImage}`)" v-bind:alt="project_item_prop.alt">
@@ -11,7 +10,7 @@
                 <strong>({{ project_item_prop.langage }})</strong>
             </span>
         </div>
-    </a>
+    </router-link>
 </template>
 
 

@@ -22,7 +22,7 @@
     import '@splidejs/splide/dist/css/splide.min.css';
 
     export default {
-        name: 'Projects',
+        name: 'SectionProject',
         components:{
             ProjectItem,
             Splide,

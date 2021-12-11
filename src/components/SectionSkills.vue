@@ -13,7 +13,7 @@
 <script>
 import SkillItem from './items/item-skill.vue'
     export default {
-        name: 'Skills',
+        name: 'SectionSkills',
         components:{
             SkillItem
         },

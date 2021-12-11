@@ -1,29 +1,17 @@
 <template>
   <div id="app">
-    <Header/>
-    <Presentation/>
-    <Projects/>
-    <Skills/>
+    <router-view/>
     <Footer/>
   </div>
 </template>
 
 
 <script>
-
-import Header from './components/Header.vue'
-import Presentation from './components/Presentation.vue'
-import Projects from './components/Projects.vue'
-import Skills from './components/Skills.vue'
 import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Presentation,
-    Projects,
-    Skills,
     Footer
   },
 }
