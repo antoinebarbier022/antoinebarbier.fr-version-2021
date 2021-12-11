@@ -9,7 +9,7 @@ import VueSmoothScroll from 'v-smooth-scroll'
 var app = createApp(App);
 
 app.use(VueSmoothScroll, {
-    duration: 50,
+    duration: 200,
     updateHistory: false,
   });
 app.mount('#app');

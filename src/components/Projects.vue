@@ -19,8 +19,8 @@
 <script>
     import ProjectItem from './items/item-project.vue'
     import { Splide, SplideSlide } from '@splidejs/vue-splide';
-
     import '@splidejs/splide/dist/css/splide.min.css';
+
     export default {
         name: 'Projects',
         components:{
@@ -131,7 +131,7 @@
 
 .slider img{
     width:100%;
-    opacity: 90%;
+    opacity: 0.9;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -139,7 +139,7 @@
 
 .slider img:hover{
     width:100%;
-    opacity: 100%;
+    opacity: 1;
 }
 
 .bloc-title-project{
@@ -150,7 +150,7 @@
 
 
 .splide__slide{
-    filter: grayscale(1) brightness(1.2);
+    filter: grayscale(1) brightness(1.1);
     /*background-color: rgba(196, 196, 196, 0.3);*/
     transform: scale(0.98, 0.98);
     -webkit-transform:scale(0.98, 0.98);

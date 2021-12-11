@@ -1,6 +1,6 @@
 <template>
 
-    <a onclick="window.alert('Le détail du projet n est pas disponible. À bientot ! ');">
+    <a onclick="window.alert('Le détail du projet n\'est pas disponible. À bientot ! ');">
         
         <div class="slide">
             <figure>

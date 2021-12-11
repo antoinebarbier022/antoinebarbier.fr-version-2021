@@ -47,16 +47,9 @@ export default {
       margin:0;
   }
 
-  :root2 {
-      --main-bg-color: #150C21;
-      --main-text-color:white;
-      --secondary-text-color:#adaab2;
-      --secondary-color: #a82c2c;
-    }
-
   :root {
     --main-bg-color: #0d1124;
-    --main-text-color:white;
+    --main-text-color:#fff;
     --secondary-text-color:#adaab2;
     --secondary-color: #0698bd;
     --secondary-color-darker: #067d9b;
