@@ -22,7 +22,7 @@
     import '@splidejs/splide/dist/css/splide.min.css';
 
     export default {
-        name: 'SectionProject',
+        name: 'SectionProjects',
         components:{
             ProjectItem,
             Splide,
@@ -103,7 +103,7 @@
     }
 </script>
 
-<style >
+<style scoped>
 
 
 #Projects-section{
@@ -181,42 +181,6 @@
     }
       
   }
-
-/* Butons pred and next */
-
-button{
-    cursor: pointer;
-    background-color: transparent;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    transition: border 300ms ease-in-out;
-    border-radius: 100%;
-    padding:2px;
-    margin:4px;
-    width: 40px;
-    height:40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.group-bouton{
-    position: absolute;
-    top:-60px;
-    right:10vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-button:hover{
-    border: 3px solid rgba(255, 255, 255, 0.8);
-}
-
-button > svg{
-    width: 10px;
-}
 
 
 </style>
