@@ -25,15 +25,24 @@
     align-items: center;
     justify-content:space-between;
     width:90%;
-    height:70px;
+    height:80px;
     margin:auto;
+}
+
+@media (max-width:850px) {
+    #menu{
+        flex-direction: column;
+    }
+    #title-menu{
+        padding: 20px;
+    }
 }
 
 #title-menu{
     font-family: "Reenie Beanie", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-style: normal;
       font-weight: 300;
-      font-size: 3rem;
+      font-size: 2.5rem;
 }
 
 nav{
