@@ -2,13 +2,13 @@
     <div class="project-detail-container">
         <div class="thumbnail-slider">
             <Splide ref="main" id="main-slider" :options="optionsMain">
-                <SplideSlide v-for="element in projectList[$route.params.id]?.images" v-bind:key="element.id">
+                <SplideSlide v-for="element in project?.images" v-bind:key="element.id">
                     <img :src="require(`../assets/images/${element.image}`)" :alt="element.alt">
                 </SplideSlide>
             </Splide>
 
-            <Splide v-if="projectList[$route.params.id]?.images.length > 1" ref="thumbnails" id="thumbnails" :options="optionsThumbnails">
-                <SplideSlide class="thumb-slide" v-for="element in projectList[$route.params.id]?.images" v-bind:key="element.id">
+            <Splide v-if="project?.images.length > 1" ref="thumbnails" id="thumbnails" :options="optionsThumbnails">
+                <SplideSlide class="thumb-slide" v-for="element in project?.images" v-bind:key="element.id">
                     <img :src="require(`../assets/images/${element.image}`)" :alt="element.alt">
                 </SplideSlide>
             </Splide>
@@ -17,20 +17,21 @@
         <div class="project-detail">
             <div class="project-detail-content">
                 
-                <h2>{{projectList[$route.params.id]?.name}} </h2>
-                <h3>{{ projectList[$route.params.id]?.annee ? projectList[$route.params.id]?.annee : "inconnu" }}</h3>
-                <p>{{ projectList[$route.params.id]?.description }}</p>
+                <h2>{{project?.name}} </h2>
+                <h3>{{ project?.annee ? project?.annee : "Date inconnu" }}</h3>
+                <p>{{ project?.description ? project?.description : "Il n'y a pas encore de description pour ce projet."}}</p>
                 <div class="tag-languages">
-                    <span v-for="tag in projectList[$route.params.id]?.languages" v-bind:key="tag.id">
+                    <span v-for="tag in project?.languages" v-bind:key="tag.id">
                         #{{ tag.name}}
                     </span>
                 </div>
                 
             </div>          
             <div class="project-links">
-                <a v-if="projectList[$route.params.id]?.lienSite" class="button-link" :href="projectList[$route.params.id]?.lienSite" target="_blank" :title="projectList[$route.params.id]?.lienSite">Voir le projet</a>
-                <a v-if="projectList[$route.params.id]?.codeSource" class="button-link" :href="projectList[$route.params.id]?.codeSource" target="_blank" :title="projectList[$route.params.id]?.codeSource">Code source</a>
-                <a v-if="projectList[$route.params.id]?.partage" class="button-link" href="#">Partager</a>
+                <a v-if="project?.lienSite" class="button-link" :href="project?.lienSite" target="_blank" :title="project?.lienSite">Voir le projet</a>
+                <a v-if="project?.gitlab" class="button-link" :href="project?.gilab" target="_blank" :title="project?.gitlab">GitLab</a>
+                <a v-if="project?.github" class="button-link" :href="project?.gihub" target="_blank" :title="project?.github">GitLab</a>
+                <a v-if="project?.partage" class="button-link" href="#">Partager</a>
             </div>
         
         </div>
@@ -73,15 +74,7 @@ export default defineComponent( {
             { id: 0, 
                 name:"Plateforme de gestion de stages pour la Faculté des Sciences",
                 annee:"2020",
-                langage:"Angular",
                 description:"Projet TER, faculté des sciences de Montpellier",
-                languages:[
-                    {name: "html"},
-                    {name: "css"},
-                    {name: "firebase"},
-                ],
-                lienSite : "" ,
-                codeSource : "" ,
                 images: [
                     {
                         image: "plateforme-gestion-stage.png",
@@ -91,80 +84,134 @@ export default defineComponent( {
                         image: "androidApp.png",
                         alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
                         }
-                    ], 
+                    ],
+                languages:[
+                    {name: "MEAN"},
+                    {name: "angular"},
+                    {name: "html"},
+                    {name: "css"},
+                    {name: "javascript"},
+                    {name: "Node.js"},
+                ],
+                lienSite : "" ,
+                gitlab : "" ,
+                github : "" ,
             },
             { id: 1, 
-                name:"Réseau Social",
-                langage:"JAVA - Android",
-                annee:"",
+                name:"Réseau Social - JAVA - Android",
+                annee:"2020",
                 description:"",
-                urlImage: "androidApp.png", 
-                alt: "Réseau Social Android Socializing" ,
                 images: [
                     {
                         image: "androidApp.png",
                         alt:"Réseau Social Android Socializing"
                         }
                     ], 
+                languages:[
+                ],
+                lienSite : "" ,
+                gitlab : "" ,
+                github : "" ,
             },
             { id: 2, 
                 name:"Mouflaquettes.fr",
                 langage:"VueJs",
                 annee:"",
                 description:"",
-                images: [],
-                urlImage: "mouflaquettes.png", 
-                alt: "Site web des mouflaquettes" 
+                images: [
+                    {
+                        image: "mouflaquettes.png",
+                        alt:"Site web des mouflaquettes"
+                        }
+                ],    
+                languages:[
+                ],
+                lienSite : "" ,
+                gitlab : "" ,
+                github : "" ,
             },
             { id: 3, 
                 name:"Projet de programmation concurente",
                 langage:"C++",
                 annee:"",
                 description:"",
-                images: [],
-                urlImage: "projet-concurente.png", 
-                alt: "Projet de programmation concurente" 
+                images: [
+                    {
+                        image: "projet-concurente.png",
+                        alt:"Projet de programmation concurente"
+                        }
+                ],
+                languages:[
+                ],
+                lienSite : "" ,
+                gitlab : "" ,
+                github : "" ,
             },
             { id: 4, 
                 name:"ALgorithme de résolution du casse tête : SlitherLink",
                 langage:"C++",
                 annee:"",
                 description:"",
-                images: [],
-                urlImage: "SlitherLink.png", 
-                alt: "Programme de résolution de SLitherLink" 
+                images: [
+                    {
+                        image: "SlitherLink.png",
+                        alt:"Programme de résolution de SLitherLink"
+                        }
+                ],
+                languages:[
+                ],
+                lienSite : "" ,
+                gitlab : "" ,
+                github : "" ,
             },
             { id: 5, 
                 name:"Projet Casse brique en ligne de commande",
                 langage:"C++",
                 annee:"",
                 description:"",
-                images: [],
-                urlImage: "casseBrique.png", 
-                alt: "Projet Casse brique en ligne de commande" 
+                images: [
+                    {
+                        image: "casseBrique.png",
+                        alt:"Projet Casse brique en ligne de commande"
+                        }
+                ],
+                languages:[
+                ],
+                lienSite : "" ,
+                gitlab : "" ,
+                github : "" ,
             },
             { id: 6, 
                 name:"Jeu vidéo Bébert - Constructeur de niveau",
                 langage:"Python",
                 annee:"",
                 description:"",
-                images: [],
-                urlImage: "bebertProject.png", 
-                alt: "Jeu vidéo Bébert - Constructeur de niveau" 
+                images: [
+                    {
+                        image: "bebertProject.png",
+                        alt:"Jeu vidéo Bébert - Constructeur de niveau"
+                        }
+                ],
+                languages:[
+                ],
+                lienSite : "" ,
+                gitlab : "" ,
+                github : "" ,
             },
         ],
 
     }
+    },computed:{
+        project : function () {
+            return this.projectList.filter( e =>  e.id == this.$route.params.id)[0];
+        }
     },
     mounted () {
         window.scrollTo(0, 0)
-        if(this.$route.params.id > this.projectList.length){
+        /* Si il n'y a pas de projet alors on quitte la page */
+        if(this.project.length == 0){
             this.$router.push('/');
-            
-        }else{
-            console.log(this.$route.params.id)
         }
-        
 
         },
     setup() {
@@ -266,6 +313,12 @@ h3{
 p{
     text-align: justify;
 }
+
+.tag-languages>span{
+    padding-right:5px;
+    color:var(--secondary-color);
+}
+
 
 .project-detail{
     display: flex;
