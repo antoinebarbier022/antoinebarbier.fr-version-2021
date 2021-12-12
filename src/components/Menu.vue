@@ -1,5 +1,5 @@
 <template>
-  <div id="menu">
+  <div id="header-menu">
         <span id="title-menu">
             <router-link to="/">Antoine Barbier</router-link>
         </span>
@@ -19,7 +19,7 @@
 
 <style scoped>
 
-#menu{
+#header-menu{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,7 +30,7 @@
 }
 
 @media (max-width:850px) {
-    #menu{
+    #header-menu{
         flex-direction: column;
     }
     #title-menu{

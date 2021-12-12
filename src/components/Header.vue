@@ -1,5 +1,5 @@
 <template>
-  <header id="header">
+  <header id="header-menu">
         <figure class="mini-profile-image">
             <img src="../assets/images/IMG_9614.jpg" alt="">
         </figure>

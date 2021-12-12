@@ -24,12 +24,6 @@ export default {
       src: url("assets/fonts/Reenie_Beanie/ReenieBeanie-Regular.ttf") format("truetype");
   }
 
-  *{
-      scroll-behavior: smooth;
-
-
-  }
-
   html, body{
       margin-bottom: 0;
       margin:0;
