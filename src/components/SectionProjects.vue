@@ -64,7 +64,7 @@
                 { id: 1, 
                     name:"Réseau Social",
                     langage:"JAVA - Android",
-                    urlImage: "androidApp.png", 
+                    urlImage: "projet-reseau-social/androidApp.png", 
                     alt: "Réseau Social Android Socializing" 
                 },
                 { id: 2, 

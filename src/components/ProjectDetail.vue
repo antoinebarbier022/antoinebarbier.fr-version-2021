@@ -92,7 +92,7 @@ export default defineComponent( {
                         alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
                         },
                         {
-                        image: "androidApp.png",
+                        image: "projet-reseau-social/androidApp.png",
                         alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
                         }
                     ],
@@ -113,10 +113,15 @@ export default defineComponent( {
                 annee:"2020",
                 description:"",
                 images: [
-                    {
-                        image: "androidApp.png",
-                        alt:"Réseau Social Android Socializing"
-                        }
+                    {image: "projet-reseau-social/androidApp.png",alt:"Réseau Social Android Socializing"},
+                    {image: "projet-reseau-social/android1.png",alt:"Réseau Social Android Socializing"},
+                    {image: "projet-reseau-social/android2.png",alt:"Réseau Social Android Socializing"},
+                    {image: "projet-reseau-social/android3.png",alt:"Réseau Social Android Socializing"},
+                    {image: "projet-reseau-social/android4.png",alt:"Réseau Social Android Socializing"},
+                    {image: "projet-reseau-social/android5.png",alt:"Réseau Social Android Socializing"},
+                    {image: "projet-reseau-social/android6.png",alt:"Réseau Social Android Socializing"},
+                    {image: "projet-reseau-social/android7.png",alt:"Réseau Social Android Socializing"},
+                    {image: "projet-reseau-social/android8.png",alt:"Réseau Social Android Socializing"},
                     ], 
                 tags:[
                     {name:"Java"},
@@ -274,9 +279,16 @@ export default defineComponent( {
     }
 
     /** Comportement de toutes les images dans le bloc thumbnails */
+ .splide__slide{
+     display:flex;
+     justify-content: center;
+ }
     .splide__slide img {
-        width: 100%;
+        
+        width: auto;
         height: auto;
+        max-width: 700px;
+        max-height: 300px;
     }
     .splide__slide {
         opacity: 0.3;
