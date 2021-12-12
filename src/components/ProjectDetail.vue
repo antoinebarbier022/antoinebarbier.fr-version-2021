@@ -335,6 +335,7 @@ p.no-description{
     font-style: italic;
 }
 .tag-tags>span{
+    text-transform:lowercase;
     padding-right:5px;
     color:var(--secondary-color);
 }
