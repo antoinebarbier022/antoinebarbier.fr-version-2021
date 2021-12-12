@@ -1,31 +1,57 @@
 <template>
-    <div id="project_detail">
-        <div>
+    <div class="project-detail-container">
+        <div class="thumbnail-slider">
             <Splide ref="main" id="main-slider" :options="optionsMain">
-      <SplideSlide >
-        <img src="../assets/images/androidApp.png" alt="slide.alt">
-      </SplideSlide>
-      <SplideSlide >
-        <img src="../assets/images/bebertProject.png" alt="slide.alt">
-      </SplideSlide>
-    </Splide>
+                <SplideSlide >
+                    <img src="../assets/images/androidApp.png" alt="slide.alt">
+                </SplideSlide>
+                <SplideSlide >
+                    <img src="../assets/images/bebertProject.png" alt="slide.alt">
+                </SplideSlide>
+                        <SplideSlide class="thumb-slide">
+                    <img src="../assets/images/androidApp.png" alt="slide.alt">
+                </SplideSlide>
+                <SplideSlide class="thumb-slide">
+                    <img src="../assets/images/bebertProject.png" alt="slide.alt">
+                </SplideSlide>
+            </Splide>
 
-              <Splide ref="thumbnails" :options="optionsThumbnails">
-      <SplideSlide >
-        <img src="../assets/images/androidApp.png" alt="slide.alt">
-      </SplideSlide>
-      <SplideSlide >
-        <img src="../assets/images/bebertProject.png" alt="slide.alt">
-      </SplideSlide>
-    </Splide>
+            <Splide ref="thumbnails" :options="optionsThumbnails">
+                <SplideSlide class="thumb-slide">
+                    <img src="../assets/images/androidApp.png" alt="slide.alt">
+                </SplideSlide>
+                <SplideSlide class="thumb-slide">
+                    <img src="../assets/images/bebertProject.png" alt="slide.alt">
+                </SplideSlide>
+                <SplideSlide class="thumb-slide">
+                    <img src="../assets/images/androidApp.png" alt="slide.alt">
+                </SplideSlide>
+                <SplideSlide class="thumb-slide">
+                    <img src="../assets/images/bebertProject.png" alt="slide.alt">
+                </SplideSlide>
+            </Splide>
 
         </div>
-        <div>
-            <h2>Plateforme de gestion des stage informatiques de la FDS de Montpellier</h2>
-            <h3>Année : 2017</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae similique velit tenetur. Amet nulla veritatis tempora natus nemo? Illum possimus harum quibusdam voluptatem vero odit, culpa nesciunt delectus in aut!</p>
-        <span>#Java #Firebase #Projet</span>
+        <div class="project-detail">
+            <div class="project-detail-content">
+                <h2>Plateforme de gestion des stage informatiques de la FDS de Montpellier</h2>
+                <h3>Année : 2017</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae similique velit tenetur. Amet nulla veritatis tempora natus nemo? Illum possimus harum quibusdam voluptatem vero odit, culpa nesciunt delectus in aut!</p>
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae similique velit tenetur. Amet nulla veritatis tempora natus nemo? Illum possimus harum quibusdam voluptatem vero odit, culpa nesciunt delectus in aut!</p>
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae similique velit tenetur. Amet nulla veritatis tempora natus nemo? Illum possimus harum quibusdam voluptatem vero odit, culpa nesciunt delectus in aut!</p>
+                
+                <span>#Java #Firebase #Projet</span>
+            </div>          
+            <div class="project-links">
+                <a class="button-link" href="#">Voir le projet</a>
+                <a class="button-link" href="#">Code source</a>
+                <a class="button-link" href="#">Partager</a>
+            </div>
+        
         </div>
+
     </div>
 </template>
 
@@ -42,22 +68,46 @@ export default defineComponent( {
 return{
     optionsMain: {
         type: 'fade',
+        width:'40vw',
+        fixedWidth:'auto',
+        fixedHeight:'auto',
         rewind: true,
         pagination: false,
         arrows: false,
         drags: false,
+        breakpoints:{
+            850:{
+                width:'auto',
+            fixedWidth:500,
+            heightRation:1.6,
+            }, 600:{
+                width:'80vw',
+                fixedWidth:400,
+                heightRation:1,
+            }
+        }
+
     },
 
     optionsThumbnails:{
-        fixedWidth: 140,
-        fixedHeight: 100,
+        width:'40vw',
+        fixedWidth: 120,
+        fixedHeight: 80,
         lazyLoad: 'nearby',
-        padding: { left: 60, right: 60 },
+        
+        
         gap: 10,
         rewind: true,
         pagination: false,
         cover: true,
         isNavigation: true,
+        breakpoints:{
+            850:{
+                width:'',
+            }, 600:{
+                width:'80vw',
+            }
+        }
     }
 
 }
@@ -86,22 +136,41 @@ return{
 </script>
 
 <style scoped>
-    div#project_detail{
+    div.project-detail-container{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 40px;
         width:80%;
         margin:auto;
         margin-top:60px;
-        margin-bottom:120px;
+        margin-bottom:120px; 
+    }
+
+    @media (max-width: 850px) {
+        div.project-detail-container{
+            grid-template-columns: 1fr;
+        }
+        .thumbnail-slider{
+        margin:auto;
+    }
+    #main-slider{
+        margin:auto;
+    }
+    }
+
+    .thumbnail-slider{
+        /*border: 3px solid rgba(255, 255, 255, 0.315);
+        box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);*/
+        padding:0px;
+        border-radius: 14px;
+        margin-bottom:30px;
     }
 
     #main-slider{
-        box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);
-        border-radius: 14px;
-        padding:20px;
+        padding:5px;
         margin-bottom:10px;
     }
+
 
 h2{
     font-style: normal;
@@ -124,6 +193,41 @@ h3{
 
 p{
     text-align: justify;
+}
+
+.project-detail{
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+}
+
+.project-links{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    margin-top:60px;
+}
+a.button-link{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height:40px;
+    width: 100%;
+    background: var(--secondary-color);
+    font-style: normal;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 5px solid var(--secondary-color-darker);
+}
+
+a.button-link:focus{
+    
+    transform: translateY(3px);
+    border-bottom: 3px solid var(--secondary-color-darker);
+
 }
 
 .splide__slide img {
