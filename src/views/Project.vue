@@ -1,18 +1,18 @@
 <template>
   <div id="project_page">
-            <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/project">Project</router-link>
-        </div>
+        <Menu/>
     <p>Project page</p>
   </div>
 </template>
 
 
 <script>
-
+import Menu from '../components/Menu.vue'
 export default {
   name: 'Project',
+  components:{
+    Menu
+  }
 
 }
 
