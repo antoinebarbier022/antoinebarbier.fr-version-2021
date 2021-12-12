@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router"
 
 import Home from "./views/Home.vue";
 import Project from "./views/Project.vue";
+import NotFound from "./views/NotFound.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -12,14 +13,19 @@ const router = createRouter({
       component: Home,
     },
     {
+      path: "/test",
+      name: "test",
+      component: Home,
+    },
+    {
       path: "/project/:id",
       name: "project",
       props: true,
       component: Project,
     },
     {
-      path: "/:catchAll(.*)", 
-      redirect : {name : "home"}
+      path: "/:NotFound(.*)", 
+      component: NotFound,
     }
     
   ],
