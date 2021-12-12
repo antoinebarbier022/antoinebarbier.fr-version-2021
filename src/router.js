@@ -7,7 +7,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes : [
     {
-      path: "/",
+      path: "",
       name: "home",
       component: Home,
     },
@@ -17,6 +17,11 @@ const router = createRouter({
       props: true,
       component: Project,
     },
+    {
+      path: "/:catchAll(.*)", 
+      redirect : {name : "home"}
+    }
+    
   ],
 });
 
