@@ -19,7 +19,8 @@
                 
                 <h2>{{project?.name}} </h2>
                 <h3>{{ project?.annee ? project?.annee : "Date inconnu" }}</h3>
-                <p>{{ project?.description ? project?.description : "Il n'y a pas encore de description pour ce projet."}}</p>
+                <p v-html="project?.description"></p>
+                <p v-if="!project?.description" class="no-description noselect">Il n'y a pas encore de description pour ce projet.</p>
                 <div class="tag-tags">
                     <span v-for="tag in project?.tags" v-bind:key="tag.id">
                         #{{ tag.name}}
@@ -28,7 +29,7 @@
                 
             </div>          
             <div class="project-links">
-                <a v-if="project?.lienSite" class="button-link" :href="project?.lienSite" target="_blank" :title="project?.lienSite">Voir le projet</a>
+                <a v-if="project?.website" class="button-link" :href="project?.website" target="_blank" :title="project?.website">Site Web</a>
                 <a v-if="project?.gitlab" class="button-link" :href="project?.gitlab" target="_blank" :title="project?.gitlab">GitLab</a>
                 <a v-if="project?.github" class="button-link" :href="project?.github" target="_blank" :title="project?.github">GitLab</a>
                 <a v-if="project?.partage" class="button-link" href="#">Partager</a>
@@ -41,7 +42,7 @@
     <div class="back-button-container">
     
         <a @click="$router.go(-1)">
-            <span class="back-button">Retour aux autres projets</span>
+            <span class="back-button noselect">Retour aux autres projets</span>
         </a>
            
 
@@ -103,7 +104,7 @@ export default defineComponent( {
                     {name: "javascript"},
                     {name: "Node.js"},
                 ],
-                lienSite : "" ,
+                website : "" ,
                 gitlab : "" ,
                 github : "" ,
             },
@@ -118,15 +119,17 @@ export default defineComponent( {
                         }
                     ], 
                 tags:[
+                    {name:"Java"},
+                    {name:"Android Studio"},
+                    {name:"Firebase"}
                 ],
-                lienSite : "" ,
+                website : "" ,
                 gitlab : "" ,
                 github : "" ,
             },
             { id: 2, 
                 name:"Mouflaquettes.fr",
-                langage:"VueJs",
-                annee:"",
+                annee:"2020",
                 description:"",
                 images: [
                     {
@@ -135,14 +138,14 @@ export default defineComponent( {
                         }
                 ],    
                 tags:[
+                    {name:"VueJs"}
                 ],
-                lienSite : "" ,
-                gitlab : "" ,
+                website : "https://www.mouflaquettes.fr",
+                gitlab : "https://gitlab.com/An_toine/mouflaquettes.fr" ,
                 github : "" ,
             },
             { id: 3, 
                 name:"Projet de programmation concurente",
-                langage:"C++",
                 annee:"",
                 description:"",
                 images: [
@@ -152,15 +155,15 @@ export default defineComponent( {
                         }
                 ],
                 tags:[
+                    {name:"C++"}
                 ],
-                lienSite : "" ,
+                website : "" ,
                 gitlab : "" ,
                 github : "" ,
             },
             { id: 4, 
-                name:"ALgorithme de résolution du casse tête : SlitherLink",
-                langage:"C++",
-                annee:"",
+                name:"Algorithme de résolution du casse tête : SlitherLink",
+                annee:"2019",
                 description:"",
                 images: [
                     {
@@ -169,15 +172,15 @@ export default defineComponent( {
                         }
                 ],
                 tags:[
+                    {name:"C++"}
                 ],
-                lienSite : "" ,
+                website : "" ,
                 gitlab : "" ,
                 github : "" ,
             },
             { id: 5, 
                 name:"Projet Casse brique en ligne de commande",
-                langage:"C++",
-                annee:"",
+                annee:"2018",
                 description:"",
                 images: [
                     {
@@ -186,8 +189,9 @@ export default defineComponent( {
                         }
                 ],
                 tags:[
+                    {name:"C++"}
                 ],
-                lienSite : "" ,
+                website : "" ,
                 gitlab : "" ,
                 github : "" ,
             },
@@ -195,7 +199,7 @@ export default defineComponent( {
                 name:"Jeu vidéo Bébert - Constructeur de niveau",
                 langage:"Python",
                 annee:"2017",
-                description:"Ce projet de jeu vidéo de style Mario Bros à été développé en Python avec l'aide de la bibliothèque Pygame.Le projet à été développé en 2017 avec Raphael Gimenez.",
+                description:`Ce projet de jeu vidéo de style Mario Bros a été développé en Python avec mon ami <a href="https://raphaelgimenez.fr" target="_blank">Raphael Gimenez.</a>`,
                 images: [
                     {image: "projet-bebert/bebertProject.png", alt:"Jeu vidéo Bébert - Constructeur de niveau"},
                     {image: "projet-bebert/splashscreen.png", alt:"Jeu vidéo Bébert - Constructeur de niveau"},
@@ -206,7 +210,7 @@ export default defineComponent( {
                     {name:"python"},
                     {name:"pygame"}
                 ],
-                lienSite : "" ,
+                website : "" ,
                 gitlab : "https://gitlab.com/An_toine/projet-bebert",
                 github : "" ,
             },
@@ -324,7 +328,12 @@ h3{
 p{
     text-align: justify;
 }
-
+p.no-description{
+    cursor:default;
+    opacity: 0.5;
+    font-weight: 300;
+    font-style: italic;
+}
 .tag-tags>span{
     padding-right:5px;
     color:var(--secondary-color);

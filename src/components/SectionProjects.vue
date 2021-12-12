@@ -80,7 +80,7 @@
                     alt: "Projet de programmation concurente" 
                 },
                 { id: 4, 
-                    name:"ALgorithme de résolution du casse tête : SlitherLink",
+                    name:"Algorithme de résolution du casse tête : SlitherLink",
                     langage:"C++",
                     urlImage: "SlitherLink.png", 
                     alt: "Programme de résolution de SLitherLink" 
