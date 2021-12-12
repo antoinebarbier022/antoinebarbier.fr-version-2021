@@ -23,7 +23,7 @@
                 <p v-if="!project?.description" class="no-description noselect">Il n'y a pas encore de description pour ce projet.</p>
                 <div class="tag-tags">
                     <span v-for="tag in project?.tags" v-bind:key="tag.id">
-                        #{{ tag.name}}
+                        #{{ tag.name.replace(" ", "")}}
                     </span>
                 </div>
                 
@@ -31,7 +31,7 @@
             <div class="project-links">
                 <a v-if="project?.website" class="button-link" :href="project?.website" target="_blank" :title="project?.website">Site Web</a>
                 <a v-if="project?.gitlab" class="button-link" :href="project?.gitlab" target="_blank" :title="project?.gitlab">GitLab</a>
-                <a v-if="project?.github" class="button-link" :href="project?.github" target="_blank" :title="project?.github">GitLab</a>
+                <a v-if="project?.github" class="button-link" :href="project?.github" target="_blank" :title="project?.github">GitHub</a>
                 <a v-if="project?.partage" class="button-link" href="#">Partager</a>
             </div>
         
@@ -129,8 +129,8 @@ export default defineComponent( {
                     {name:"Firebase"}
                 ],
                 website : "" ,
-                gitlab : "" ,
-                github : "" ,
+                gitlab : "https://gitlab.com/An_toine/projet_dev_android_hmin205" ,
+                github : "https://github.com/antoinebarbier022/reseau-social-android" ,
             },
             { id: 2, 
                 name:"Mouflaquettes.fr",
