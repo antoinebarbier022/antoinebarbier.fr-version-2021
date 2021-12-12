@@ -37,6 +37,13 @@
         </div>
 
     </div>
+
+    <div class="back-button-container">
+        <router-link tag="li" to="/">
+            <span class="back-button">Retour aux autres projets</span>
+        </router-link>
+    </div>
+
 </template>
 
 <script>
@@ -244,7 +251,6 @@ export default defineComponent( {
         width:80%;
         margin:auto;
         margin-top:60px;
-        margin-bottom:120px; 
     }
 
     #main-slider{
@@ -353,6 +359,23 @@ a.button-link:focus{
     transform: translateY(3px);
     border-bottom: 3px solid var(--secondary-color-darker);
 
+}
+
+.back-button-container{
+    display:flex;
+    justify-content: center;
+    margin-top:120px;
+    margin-bottom:120px; 
+}
+.back-button{
+    border-radius:10px;
+    border:1px solid rgba(255, 255, 255, 0.308); 
+    background: rgba(255, 255, 255, 0.02);
+    padding:10px 60px;
+    margin:auto;
+}
+.back-button:hover{
+    background: rgba(255, 255, 255, 0.048);
 }
 
 
