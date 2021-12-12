@@ -42,7 +42,7 @@
     <div class="back-button-container">
     
         <a @click="$router.go(-1)">
-            <span class="back-button noselect">Retour aux autres projets</span>
+            <span class="back-button noselect">Retour aux projets</span>
         </a>
            
 
@@ -289,6 +289,15 @@ export default defineComponent( {
         height: auto;
         max-width: 700px;
         max-height: 300px;
+    }
+
+    @media (max-width:400px) {
+        .splide__slide img {
+            width: auto;
+            height: auto;
+            max-width: 300px;
+            max-height: 250px;
+        }
     }
     .splide__slide {
         opacity: 0.3;
