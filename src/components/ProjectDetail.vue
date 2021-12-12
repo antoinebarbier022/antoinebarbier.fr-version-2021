@@ -18,9 +18,14 @@
             <div class="project-detail-content">
                 
                 <h2>{{projectList[$route.params.id]?.name}} </h2>
-                <h3>Année : {{ projectList[$route.params.id]?.annee ? projectList[$route.params.id]?.annee : "inconnu" }}</h3>
+                <h3>{{ projectList[$route.params.id]?.annee ? projectList[$route.params.id]?.annee : "inconnu" }}</h3>
                 <p>{{ projectList[$route.params.id]?.description }}</p>
-                <span>#Java #Firebase #Projet</span>
+                <div class="tag-languages">
+                    <span v-for="tag in projectList[$route.params.id]?.languages" v-bind:key="tag.id">
+                        #{{ tag.name}}
+                    </span>
+                </div>
+                
             </div>          
             <div class="project-links">
                 <a v-if="projectList[$route.params.id]?.lienSite" class="button-link" :href="projectList[$route.params.id]?.lienSite" target="_blank" :title="projectList[$route.params.id]?.lienSite">Voir le projet</a>
@@ -70,6 +75,11 @@ export default defineComponent( {
                 annee:"2020",
                 langage:"Angular",
                 description:"Projet TER, faculté des sciences de Montpellier",
+                languages:[
+                    {name: "html"},
+                    {name: "css"},
+                    {name: "firebase"},
+                ],
                 lienSite : "" ,
                 codeSource : "" ,
                 images: [
