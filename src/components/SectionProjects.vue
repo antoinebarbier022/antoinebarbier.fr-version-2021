@@ -70,7 +70,7 @@
                 { id: 2, 
                     name:"Mouflaquettes.fr",
                     langage:"VueJs",
-                    urlImage: "mouflaquettes.png", 
+                    urlImage: "projet-mouflaquettes/mouflaquettes.png", 
                     alt: "Site web des mouflaquettes" 
                 },
                 { id: 3, 
@@ -94,7 +94,7 @@
                 { id: 6, 
                     name:"Jeu vidéo Bébert - Constructeur de niveau",
                     langage:"Python",
-                    urlImage: "bebertProject.png", 
+                    urlImage: "projet-bebert/bebertProject.png", 
                     alt: "Jeu vidéo Bébert - Constructeur de niveau" 
                 },
             ],

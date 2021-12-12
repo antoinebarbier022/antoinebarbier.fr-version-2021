@@ -20,8 +20,8 @@
                 <h2>{{project?.name}} </h2>
                 <h3>{{ project?.annee ? project?.annee : "Date inconnu" }}</h3>
                 <p>{{ project?.description ? project?.description : "Il n'y a pas encore de description pour ce projet."}}</p>
-                <div class="tag-languages">
-                    <span v-for="tag in project?.languages" v-bind:key="tag.id">
+                <div class="tag-tags">
+                    <span v-for="tag in project?.tags" v-bind:key="tag.id">
                         #{{ tag.name}}
                     </span>
                 </div>
@@ -29,8 +29,8 @@
             </div>          
             <div class="project-links">
                 <a v-if="project?.lienSite" class="button-link" :href="project?.lienSite" target="_blank" :title="project?.lienSite">Voir le projet</a>
-                <a v-if="project?.gitlab" class="button-link" :href="project?.gilab" target="_blank" :title="project?.gitlab">GitLab</a>
-                <a v-if="project?.github" class="button-link" :href="project?.gihub" target="_blank" :title="project?.github">GitLab</a>
+                <a v-if="project?.gitlab" class="button-link" :href="project?.gitlab" target="_blank" :title="project?.gitlab">GitLab</a>
+                <a v-if="project?.github" class="button-link" :href="project?.github" target="_blank" :title="project?.github">GitLab</a>
                 <a v-if="project?.partage" class="button-link" href="#">Partager</a>
             </div>
         
@@ -39,9 +39,12 @@
     </div>
 
     <div class="back-button-container">
-        <router-link tag="li" to="/">
+    
+        <a @click="$router.go(-1)">
             <span class="back-button">Retour aux autres projets</span>
-        </router-link>
+        </a>
+           
+
     </div>
 
 </template>
@@ -92,7 +95,7 @@ export default defineComponent( {
                         alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
                         }
                     ],
-                languages:[
+                tags:[
                     {name: "MEAN"},
                     {name: "angular"},
                     {name: "html"},
@@ -114,7 +117,7 @@ export default defineComponent( {
                         alt:"Réseau Social Android Socializing"
                         }
                     ], 
-                languages:[
+                tags:[
                 ],
                 lienSite : "" ,
                 gitlab : "" ,
@@ -127,11 +130,11 @@ export default defineComponent( {
                 description:"",
                 images: [
                     {
-                        image: "mouflaquettes.png",
+                        image: "projet-mouflaquettes/mouflaquettes.png",
                         alt:"Site web des mouflaquettes"
                         }
                 ],    
-                languages:[
+                tags:[
                 ],
                 lienSite : "" ,
                 gitlab : "" ,
@@ -148,7 +151,7 @@ export default defineComponent( {
                         alt:"Projet de programmation concurente"
                         }
                 ],
-                languages:[
+                tags:[
                 ],
                 lienSite : "" ,
                 gitlab : "" ,
@@ -165,7 +168,7 @@ export default defineComponent( {
                         alt:"Programme de résolution de SLitherLink"
                         }
                 ],
-                languages:[
+                tags:[
                 ],
                 lienSite : "" ,
                 gitlab : "" ,
@@ -182,7 +185,7 @@ export default defineComponent( {
                         alt:"Projet Casse brique en ligne de commande"
                         }
                 ],
-                languages:[
+                tags:[
                 ],
                 lienSite : "" ,
                 gitlab : "" ,
@@ -191,18 +194,20 @@ export default defineComponent( {
             { id: 6, 
                 name:"Jeu vidéo Bébert - Constructeur de niveau",
                 langage:"Python",
-                annee:"",
-                description:"",
+                annee:"2017",
+                description:"Ce projet de jeu vidéo de style Mario Bros à été développé en Python avec l'aide de la bibliothèque Pygame.Le projet à été développé en 2017 avec Raphael Gimenez.",
                 images: [
-                    {
-                        image: "bebertProject.png",
-                        alt:"Jeu vidéo Bébert - Constructeur de niveau"
-                        }
+                    {image: "projet-bebert/bebertProject.png", alt:"Jeu vidéo Bébert - Constructeur de niveau"},
+                    {image: "projet-bebert/splashscreen.png", alt:"Jeu vidéo Bébert - Constructeur de niveau"},
+                    {image: "projet-bebert/jeu.png", alt:"Jeu vidéo Bébert - Constructeur de niveau"},
+                    {image: "projet-bebert/editeur-niveau.png", alt:"Jeu vidéo Bébert - Constructeur de niveau"},
                 ],
-                languages:[
+                tags:[
+                    {name:"python"},
+                    {name:"pygame"}
                 ],
                 lienSite : "" ,
-                gitlab : "" ,
+                gitlab : "https://gitlab.com/An_toine/projet-bebert",
                 github : "" ,
             },
         ],
@@ -320,7 +325,7 @@ p{
     text-align: justify;
 }
 
-.tag-languages>span{
+.tag-tags>span{
     padding-right:5px;
     color:var(--secondary-color);
 }
@@ -375,6 +380,7 @@ a.button-link:focus{
     margin:auto;
 }
 .back-button:hover{
+    cursor: pointer;
     background: rgba(255, 255, 255, 0.048);
 }
 
