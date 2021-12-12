@@ -2,32 +2,14 @@
     <div class="project-detail-container">
         <div class="thumbnail-slider">
             <Splide ref="main" id="main-slider" :options="optionsMain">
-                <SplideSlide >
-                    <img src="../assets/images/androidApp.png" alt="slide.alt">
-                </SplideSlide>
-                <SplideSlide >
-                    <img src="../assets/images/bebertProject.png" alt="slide.alt">
-                </SplideSlide>
-                        <SplideSlide class="thumb-slide">
-                    <img src="../assets/images/androidApp.png" alt="slide.alt">
-                </SplideSlide>
-                <SplideSlide class="thumb-slide">
-                    <img src="../assets/images/bebertProject.png" alt="slide.alt">
+                <SplideSlide v-for="element in projectList[$route.params.id]?.images" v-bind:key="element.id">
+                    <img :src="require(`../assets/images/${element.image}`)" :alt="element.alt">
                 </SplideSlide>
             </Splide>
 
-            <Splide ref="thumbnails" id="thumbnails" :options="optionsThumbnails">
-                <SplideSlide class="thumb-slide">
-                    <img src="../assets/images/androidApp.png" alt="slide.alt">
-                </SplideSlide>
-                <SplideSlide class="thumb-slide">
-                    <img src="../assets/images/bebertProject.png" alt="slide.alt">
-                </SplideSlide>
-                <SplideSlide class="thumb-slide">
-                    <img src="../assets/images/androidApp.png" alt="slide.alt">
-                </SplideSlide>
-                <SplideSlide class="thumb-slide">
-                    <img src="../assets/images/bebertProject.png" alt="slide.alt">
+            <Splide v-if="projectList[$route.params.id]?.images.length > 1" ref="thumbnails" id="thumbnails" :options="optionsThumbnails">
+                <SplideSlide class="thumb-slide" v-for="element in projectList[$route.params.id]?.images" v-bind:key="element.id">
+                    <img :src="require(`../assets/images/${element.image}`)" :alt="element.alt">
                 </SplideSlide>
             </Splide>
 
@@ -35,15 +17,15 @@
         <div class="project-detail">
             <div class="project-detail-content">
                 
-                <h2>{{projectList[$route.params.id].name}} </h2>
-                <h3>Année : {{ projectList[$route.params.id].annee ? projectList[$route.params.id].annee : "inconnu" }}</h3>
-                <p>{{ projectList[$route.params.id].description }}</p>
+                <h2>{{projectList[$route.params.id]?.name}} </h2>
+                <h3>Année : {{ projectList[$route.params.id]?.annee ? projectList[$route.params.id]?.annee : "inconnu" }}</h3>
+                <p>{{ projectList[$route.params.id]?.description }}</p>
                 <span>#Java #Firebase #Projet</span>
             </div>          
             <div class="project-links">
-                <a class="button-link" href="#">Voir le projet</a>
-                <a class="button-link" href="#">Code source</a>
-                <a class="button-link" href="#">Partager</a>
+                <a v-if="projectList[$route.params.id]?.lienSite" class="button-link" :href="projectList[$route.params.id]?.lienSite" target="_blank" :title="projectList[$route.params.id]?.lienSite">Voir le projet</a>
+                <a v-if="projectList[$route.params.id]?.codeSource" class="button-link" :href="projectList[$route.params.id]?.codeSource" target="_blank" :title="projectList[$route.params.id]?.codeSource">Code source</a>
+                <a v-if="projectList[$route.params.id]?.partage" class="button-link" href="#">Partager</a>
             </div>
         
         </div>
@@ -61,123 +43,139 @@ export default defineComponent( {
   components: {
     Splide,
     SplideSlide,
-  },data(){
-return{
-    optionsMain: {
-        type: 'fade',
-        rewind: true,
-        pagination: false,
-        arrows: false,
-        drags: false,
-    },
-
-    optionsThumbnails:{
-        lazyLoad: 'nearby',
-        gap: 10,
-        rewind: true,
-        pagination: false,
-        cover: true,
-        isNavigation: true,
-    },
-
-    // En attendant d'utiliser VueX pour passer des données dans l'application
-    projectList: [
-                { id: 0, 
-                    name:"Plateforme de gestion de stages pour la Faculté des Sciences",
-                    annee:"2020",
-                    langage:"Angular",
-                    description:"Projet TER, faculté des sciences de Montpellier",
-                    images: [
-                        {
-                            image: "plateforme-gestion-stage.png",
-                            alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
-                            }
-                        ], 
-                },
-                { id: 1, 
-                    name:"Réseau Social",
-                    langage:"JAVA - Android",
-                    annee:"",
-                    description:"",
-                    urlImage: "androidApp.png", 
-                    alt: "Réseau Social Android Socializing" ,
-                    images: [
-                        {
-                            image: "androidApp.png",
-                            alt:"Réseau Social Android Socializing"
-                            }
-                        ], 
-                },
-                { id: 2, 
-                    name:"Mouflaquettes.fr",
-                    langage:"VueJs",
-                    annee:"",
-                    description:"",
-                    images: [],
-                    urlImage: "mouflaquettes.png", 
-                    alt: "Site web des mouflaquettes" 
-                },
-                { id: 3, 
-                    name:"Projet de programmation concurente",
-                    langage:"C++",
-                    annee:"",
-                    description:"",
-                    images: [],
-                    urlImage: "projet-concurente.png", 
-                    alt: "Projet de programmation concurente" 
-                },
-                { id: 4, 
-                    name:"ALgorithme de résolution du casse tête : SlitherLink",
-                    langage:"C++",
-                    annee:"",
-                    description:"",
-                    images: [],
-                    urlImage: "SlitherLink.png", 
-                    alt: "Programme de résolution de SLitherLink" 
-                },
-                { id: 5, 
-                    name:"Projet Casse brique en ligne de commande",
-                    langage:"C++",
-                    annee:"",
-                    description:"",
-                    images: [],
-                    urlImage: "casseBrique.png", 
-                    alt: "Projet Casse brique en ligne de commande" 
-                },
-                { id: 6, 
-                    name:"Jeu vidéo Bébert - Constructeur de niveau",
-                    langage:"Python",
-                    annee:"",
-                    description:"",
-                    images: [],
-                    urlImage: "bebertProject.png", 
-                    alt: "Jeu vidéo Bébert - Constructeur de niveau" 
-                },
-            ],
-
-}
-  },mounted () {
-  window.scrollTo(0, 0)
-},
-  setup() {
-    const main = ref();
-    const thumbnails = ref();
-
-    onMounted( () => {  
-      const thumbsSplide = thumbnails.value?.splide;
-      if ( thumbsSplide ) {
-        main.value?.sync( thumbsSplide );
-      }else{
-          console.log("pas sync")
-      }
-    } );
-    return {
-      main,
-      thumbnails,
-    }
   },
-  
-} );
+  data(){
+    return{
+        optionsMain: {
+            type: 'fade',
+            rewind: true,
+            pagination: false,
+            arrows: false,
+            drags: false,
+        },
+
+        optionsThumbnails:{
+            lazyLoad: 'nearby',
+            gap: 10,
+            rewind: true,
+            pagination: false,
+            cover: true,
+            isNavigation: true,
+        },
+
+        // En attendant d'utiliser VueX pour passer des données dans l'application
+        projectList: [
+            { id: 0, 
+                name:"Plateforme de gestion de stages pour la Faculté des Sciences",
+                annee:"2020",
+                langage:"Angular",
+                description:"Projet TER, faculté des sciences de Montpellier",
+                lienSite : "" ,
+                codeSource : "" ,
+                images: [
+                    {
+                        image: "plateforme-gestion-stage.png",
+                        alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
+                        },
+                        {
+                        image: "androidApp.png",
+                        alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
+                        }
+                    ], 
+            },
+            { id: 1, 
+                name:"Réseau Social",
+                langage:"JAVA - Android",
+                annee:"",
+                description:"",
+                urlImage: "androidApp.png", 
+                alt: "Réseau Social Android Socializing" ,
+                images: [
+                    {
+                        image: "androidApp.png",
+                        alt:"Réseau Social Android Socializing"
+                        }
+                    ], 
+            },
+            { id: 2, 
+                name:"Mouflaquettes.fr",
+                langage:"VueJs",
+                annee:"",
+                description:"",
+                images: [],
+                urlImage: "mouflaquettes.png", 
+                alt: "Site web des mouflaquettes" 
+            },
+            { id: 3, 
+                name:"Projet de programmation concurente",
+                langage:"C++",
+                annee:"",
+                description:"",
+                images: [],
+                urlImage: "projet-concurente.png", 
+                alt: "Projet de programmation concurente" 
+            },
+            { id: 4, 
+                name:"ALgorithme de résolution du casse tête : SlitherLink",
+                langage:"C++",
+                annee:"",
+                description:"",
+                images: [],
+                urlImage: "SlitherLink.png", 
+                alt: "Programme de résolution de SLitherLink" 
+            },
+            { id: 5, 
+                name:"Projet Casse brique en ligne de commande",
+                langage:"C++",
+                annee:"",
+                description:"",
+                images: [],
+                urlImage: "casseBrique.png", 
+                alt: "Projet Casse brique en ligne de commande" 
+            },
+            { id: 6, 
+                name:"Jeu vidéo Bébert - Constructeur de niveau",
+                langage:"Python",
+                annee:"",
+                description:"",
+                images: [],
+                urlImage: "bebertProject.png", 
+                alt: "Jeu vidéo Bébert - Constructeur de niveau" 
+            },
+        ],
+
+    }
+    },
+    mounted () {
+        window.scrollTo(0, 0)
+        if(this.$route.params.id > this.projectList.length){
+            this.$router.push('/');
+            
+        }else{
+            console.log(this.$route.params.id)
+        }
+        
+
+        },
+    setup() {
+        const main = ref();
+        const thumbnails = ref();
+
+        onMounted( () => {  
+        const thumbsSplide = thumbnails.value?.splide;
+        if ( thumbsSplide ) {
+            main.value?.sync( thumbsSplide );
+        }else{
+            console.log("pas sync")
+        }
+        } );
+        return {
+        main,
+        thumbnails,
+        }
+    },
+    
+    } );
 </script>
 
 <style scoped>
