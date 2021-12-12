@@ -16,7 +16,7 @@
                 </SplideSlide>
             </Splide>
 
-            <Splide ref="thumbnails" :options="optionsThumbnails">
+            <Splide ref="thumbnails" id="thumbnails" :options="optionsThumbnails">
                 <SplideSlide class="thumb-slide">
                     <img src="../assets/images/androidApp.png" alt="slide.alt">
                 </SplideSlide>
@@ -68,46 +68,19 @@ export default defineComponent( {
 return{
     optionsMain: {
         type: 'fade',
-        width:'40vw',
-        fixedWidth:'auto',
-        fixedHeight:'auto',
         rewind: true,
         pagination: false,
         arrows: false,
         drags: false,
-        breakpoints:{
-            850:{
-                width:'auto',
-            fixedWidth:500,
-            heightRation:1.6,
-            }, 600:{
-                width:'80vw',
-                fixedWidth:400,
-                heightRation:1,
-            }
-        }
-
     },
 
     optionsThumbnails:{
-        width:'40vw',
-        fixedWidth: 120,
-        fixedHeight: 80,
         lazyLoad: 'nearby',
-        
-        
         gap: 10,
         rewind: true,
         pagination: false,
         cover: true,
         isNavigation: true,
-        breakpoints:{
-            850:{
-                width:'',
-            }, 600:{
-                width:'80vw',
-            }
-        }
     }
 
 }
@@ -136,6 +109,7 @@ return{
 </script>
 
 <style scoped>
+    /** La thumnails et le texte explicatif du projet */
     div.project-detail-container{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -146,30 +120,48 @@ return{
         margin-bottom:120px; 
     }
 
-    @media (max-width: 850px) {
-        div.project-detail-container{
-            grid-template-columns: 1fr;
-        }
-        .thumbnail-slider{
-        margin:auto;
-    }
-    #main-slider{
-        margin:auto;
-    }
-    }
-
-    .thumbnail-slider{
-        /*border: 3px solid rgba(255, 255, 255, 0.315);
-        box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);*/
-        padding:0px;
-        border-radius: 14px;
-        margin-bottom:30px;
-    }
-
     #main-slider{
         padding:5px;
         margin-bottom:10px;
     }
+
+    /* On défini la taille des images thumnails */
+    #thumbnails-list > li{
+        max-width:100px;
+        height:5rem;
+    }
+
+    /** Comportement de toutes les images dans le bloc thumbnails */
+    .splide__slide img {
+        width: 100%;
+        height: auto;
+    }
+    .splide__slide {
+        opacity: 0.3;
+    }
+
+    /** SUppression de la bordure par default */
+    .splide--nav>.splide__slider>.splide__track>.splide__list>.splide__slide.is-active, .splide--nav>.splide__track>.splide__list>.splide__slide.is-active{
+        border: 0px solid transparent;
+    }
+    .splide__slide.is-active {
+    opacity: 1;
+    
+    }
+
+
+    @media (max-width: 850px) {
+        div.project-detail-container{
+            grid-template-columns: 1fr;
+        }
+        /** On met un peu d'espace en dessous du bloc thumbnail */
+        #thumbnails{
+            margin-bottom:20px;
+        }
+    }
+
+
+   
 
 
 h2{
@@ -229,24 +221,6 @@ a.button-link:focus{
     border-bottom: 3px solid var(--secondary-color-darker);
 
 }
-
-.splide__slide img {
-  width: 100%;
-  height: auto;
-}
-    .splide__slide {
-  opacity: 0.3;
-}
-
-/** SUppression de la bordure par default */
-.splide--nav>.splide__slider>.splide__track>.splide__list>.splide__slide.is-active, .splide--nav>.splide__track>.splide__list>.splide__slide.is-active{
-    border: 0px solid transparent;
-}
-.splide__slide.is-active {
-  opacity: 1;
-  
-}
-
 
 
 </style>
