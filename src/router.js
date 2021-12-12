@@ -8,12 +8,13 @@ const router = createRouter({
   routes : [
     {
       path: "/",
-      name: "Home",
+      name: "home",
       component: Home,
     },
     {
-      path: "/project",
-      name: "Project",
+      path: "/project/:id",
+      name: "project",
+      props: true,
       component: Project,
     },
   ],

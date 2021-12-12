@@ -34,14 +34,10 @@
         </div>
         <div class="project-detail">
             <div class="project-detail-content">
-                <h2>Plateforme de gestion des stage informatiques de la FDS de Montpellier</h2>
-                <h3>Année : 2017</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae similique velit tenetur. Amet nulla veritatis tempora natus nemo? Illum possimus harum quibusdam voluptatem vero odit, culpa nesciunt delectus in aut!</p>
                 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae similique velit tenetur. Amet nulla veritatis tempora natus nemo? Illum possimus harum quibusdam voluptatem vero odit, culpa nesciunt delectus in aut!</p>
-                
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae similique velit tenetur. Amet nulla veritatis tempora natus nemo? Illum possimus harum quibusdam voluptatem vero odit, culpa nesciunt delectus in aut!</p>
-                
+                <h2>{{projectList[$route.params.id].name}} </h2>
+                <h3>Année : {{ projectList[$route.params.id].annee ? projectList[$route.params.id].annee : "inconnu" }}</h3>
+                <p>{{ projectList[$route.params.id].description }}</p>
                 <span>#Java #Firebase #Projet</span>
             </div>          
             <div class="project-links">
@@ -61,6 +57,7 @@ import { defineComponent, onMounted, ref } from 'vue';
 
 export default defineComponent( {
   name: 'ProjectDetail',
+  props: ['id'],
   components: {
     Splide,
     SplideSlide,
@@ -81,7 +78,82 @@ return{
         pagination: false,
         cover: true,
         isNavigation: true,
-    }
+    },
+
+    // En attendant d'utiliser VueX pour passer des données dans l'application
+    projectList: [
+                { id: 0, 
+                    name:"Plateforme de gestion de stages pour la Faculté des Sciences",
+                    annee:"2020",
+                    langage:"Angular",
+                    description:"Projet TER, faculté des sciences de Montpellier",
+                    images: [
+                        {
+                            image: "plateforme-gestion-stage.png",
+                            alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
+                            }
+                        ], 
+                },
+                { id: 1, 
+                    name:"Réseau Social",
+                    langage:"JAVA - Android",
+                    annee:"",
+                    description:"",
+                    urlImage: "androidApp.png", 
+                    alt: "Réseau Social Android Socializing" ,
+                    images: [
+                        {
+                            image: "androidApp.png",
+                            alt:"Réseau Social Android Socializing"
+                            }
+                        ], 
+                },
+                { id: 2, 
+                    name:"Mouflaquettes.fr",
+                    langage:"VueJs",
+                    annee:"",
+                    description:"",
+                    images: [],
+                    urlImage: "mouflaquettes.png", 
+                    alt: "Site web des mouflaquettes" 
+                },
+                { id: 3, 
+                    name:"Projet de programmation concurente",
+                    langage:"C++",
+                    annee:"",
+                    description:"",
+                    images: [],
+                    urlImage: "projet-concurente.png", 
+                    alt: "Projet de programmation concurente" 
+                },
+                { id: 4, 
+                    name:"ALgorithme de résolution du casse tête : SlitherLink",
+                    langage:"C++",
+                    annee:"",
+                    description:"",
+                    images: [],
+                    urlImage: "SlitherLink.png", 
+                    alt: "Programme de résolution de SLitherLink" 
+                },
+                { id: 5, 
+                    name:"Projet Casse brique en ligne de commande",
+                    langage:"C++",
+                    annee:"",
+                    description:"",
+                    images: [],
+                    urlImage: "casseBrique.png", 
+                    alt: "Projet Casse brique en ligne de commande" 
+                },
+                { id: 6, 
+                    name:"Jeu vidéo Bébert - Constructeur de niveau",
+                    langage:"Python",
+                    annee:"",
+                    description:"",
+                    images: [],
+                    urlImage: "bebertProject.png", 
+                    alt: "Jeu vidéo Bébert - Constructeur de niveau" 
+                },
+            ],
 
 }
   },mounted () {

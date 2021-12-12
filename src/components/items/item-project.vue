@@ -1,6 +1,6 @@
 <template>
 <!--onclick="window.alert('Le détail du projet n\'est pas disponible. À bientot ! ');"-->
-    <router-link to="/project">
+    <router-link :to="{ name: 'project', params: { id: project_item_prop.id }}">
         <div class="slide">
             <figure>
                 <img v-bind:src="require(`../../assets/images/${project_item_prop.urlImage}`)" v-bind:alt="project_item_prop.alt">
