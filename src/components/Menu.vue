@@ -5,8 +5,8 @@
         </span>
         <nav>  
             <router-link tag="li" to="/">Présentation</router-link>
-            <router-link tag="li" to="/">Mes Projets</router-link> 
-            <a href="">Me Contacter</a> 
+            <router-link tag="li" to="/project" onclick="window.alert('La page des projets n\'est pas encore disponible.');">Mes Projets</router-link> 
+            <a href="/project" onclick="window.alert('La page contact n\'est pas encore disponible.');">Me Contacter</a> 
         </nav>
     </div>
 </template>
