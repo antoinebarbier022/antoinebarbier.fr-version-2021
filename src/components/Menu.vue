@@ -25,7 +25,7 @@
     align-items: center;
     justify-content:space-between;
     width:90%;
-    height:80px;
+    height:max-content; 
     margin:auto;
 }
 
@@ -43,6 +43,8 @@
       font-style: normal;
       font-weight: 300;
       font-size: 2.5rem;
+      padding-top:20px;
+      padding-bottom:10px;
 }
 
 nav{
