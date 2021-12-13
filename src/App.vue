@@ -1,19 +1,15 @@
 <template>
   <div id="app">
     <router-view/>
-    <Footer/>
+    
   </div>
 </template>
 
 
 <script>
-import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
-  components: {
-    Footer
-  },
 }
 
 </script>
@@ -28,17 +24,10 @@ export default {
       margin-bottom: 0;
       margin:0;
   }
+  #app{
+      height: 100vh;
+  }
 
-/** Fixer le bottom en bas de page */
-#app{ 
-    height:100vh;
-    display:flex; 
-    flex-direction:column; 
-}
-/** Fixer le bottom en bas de page */
-footer{
-    margin-top:auto; 
-}
 
   .noselect {
   -webkit-touch-callout: none; /* iOS Safari */

@@ -8,18 +8,21 @@
               Retour sur la page principale
             </router-link>
           </div>
-        </div>              
+        </div>  
+        <Footer/>            
   </div>
 </template>
 
 
 <script>
   import Menu from '../components/Menu.vue'
+  import Footer from '../components/Footer.vue'
 
   export default {
     name: 'NotFound',
     components:{
       Menu,
+      Footer
     }
 
   }
@@ -28,12 +31,14 @@
 
 <style scoped>
 
-#notFound{
-  height: 100%;
-  display:grid;
-  grid-template-rows: max-content auto;
-  margin-bottom:60px;
+#notFound{ 
+  min-height: 100vh; 
+  margin: 0; 
+  
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
+
 .notFound-content{
   display: flex;
   flex-direction: column;

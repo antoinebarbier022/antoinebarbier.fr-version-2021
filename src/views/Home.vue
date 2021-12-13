@@ -4,6 +4,7 @@
     <SectionPresentation/>
     <SectionProjects/>
     <SectionSkills/>
+    <Footer/>
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import Header from '../components/Header.vue'
 import SectionPresentation from '../components/SectionPresentation.vue'
 import SectionProjects from '../components/SectionProjects.vue'
 import SectionSkills from '../components/SectionSkills.vue'
+  import Footer from '../components/Footer.vue'
 
 export default {
   name: 'Home',
@@ -21,7 +23,8 @@ export default {
     Header,
     SectionPresentation,
     SectionProjects,
-    SectionSkills
+    SectionSkills,
+    Footer
   },mounted () {
         window.scrollTo(0, 0)
     }
