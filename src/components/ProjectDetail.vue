@@ -92,7 +92,7 @@ export default defineComponent( {
         },
         // En attendant d'utiliser VueX pour passer des données dans l'application
         projectList: [
-            { id: 10, 
+            { id: "application-marchee-en-ligne", 
                     name:"Application marchée en ligne",
                     annee:"2021",
                     description:"",
@@ -114,7 +114,7 @@ export default defineComponent( {
                     gitlab : "https://gitlab.com/An_toine/app-marche-en-ligne" ,
                     github : "https://github.com/antoinebarbier022/app-marche-en-ligne" ,
                 },
-                { id: 9, 
+                { id: "implementation-moteur-de-requetes-en-etoile", 
                     name:"Implémentation d'un moteur de requêtes en étoile",
                     annee:"2021",
                 description:"Membres du groupe : Antoine Barbier et Djamel Benameur.",
@@ -133,7 +133,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/implementation-d-un-mini-moteur-de-requetes-en-etoile" ,
                 github : "https://github.com/antoinebarbier022/implementation-d-un-mini-moteur-de-requetes-en-etoile" ,
                 },
-                { id: 8, 
+                { id: "application-meteo", 
                     name:"Application Méteo",
                     annee:"2021",
                 description:"",
@@ -156,7 +156,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/hai912i-td-antoine-barbier/-/tree/main/weather_app" ,
                 github : "https://github.com/antoinebarbier022/td-mobile-flutter/tree/main/weather_app" ,
                 },
-            { id: 7, 
+            { id: "plateforme-gestion-des-stages-informatique", 
                 name:"Plateforme de gestion de stages pour la Faculté des Sciences",
                 annee:"2020",
                 description:`Projet TER (Travail d'Étude et de Recherche) d'une durée de 4 mois. <br> 
@@ -185,7 +185,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/m1-ter-stageinfo" ,
                 github : "https://github.com/antoinebarbier022/M1-TER-stageInfo" ,
             },
-            { id: 6, 
+            { id: "application-reseau-social", 
                 name:"Réseau Social - JAVA - Android",
                 annee:"2020",
                 description:"",
@@ -212,7 +212,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/projet_dev_android_hmin205" ,
                 github : "https://github.com/antoinebarbier022/reseau-social-android" ,
             },
-            { id: 5, 
+            { id: "mouflaquettes", 
                 name:"Mouflaquettes.fr",
                 annee:"2020",
                 description:"",
@@ -232,7 +232,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/mouflaquettes.fr" ,
                 github : "" ,
             },
-            { id: 4, 
+            { id: "projet-programmation-concurente", 
                 name:"Projet de programmation concurente",
                 annee:"2020",
                 description:"",
@@ -256,7 +256,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/hmin105m-projet-systeme-de-reservation-distribue" ,
                 github : "" ,
             },
-            { id: 3, 
+            { id: "algorithme-de-resolution-du-jeu-slitherlink", 
                 name:"Algorithme de résolution du casse tête : SlitherLink",
                 annee:"2019",
                 description:"Membres du projets : Antoine Barbier, Djamel Benameur, Timoléon Demas, Matthieu Commins, Thomas Zaragoza.",
@@ -280,7 +280,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/resolution-slitherlink" ,
                 github : "" ,
             },
-            { id: 2, 
+            { id: "casse-brique-en-ligne-de-commande", 
                 name:"Projet Casse brique en ligne de commande",
                 annee:"2018",
                 description:"Ce projet universitaire a été développé par Antoine Barbier, Djamel Benameur, Timoléon Demas et Matthieu Commins.",
@@ -303,8 +303,8 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/l2-casse-brique" ,
                 github : "" ,
             },
-            { id: 1, 
-                name:"Jeu vidéo Bébert - Constructeur de niveau",
+            { id: "jeu-video-bebert", 
+                name:"Jeu vidéo Bébert",
                 langage:"Python",
                 annee:"2017",
                 description:`Ce projet de jeu vidéo de style Mario Bros a été développé en Python avec mon ami Raphael Gimenez.</a>`,
@@ -342,12 +342,7 @@ export default defineComponent( {
     },
     mounted () {
         window.scrollTo(0, 0)
-        /* Si il n'y a pas de projet alors on quitte la page */
-        if(this.project.length == 0){
-            this.$router.push('/');
-        }
-
-        },
+    },
     setup() {
         const main = ref();
         const thumbnails = ref();

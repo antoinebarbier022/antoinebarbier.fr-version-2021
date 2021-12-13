@@ -29,6 +29,17 @@ export default {
       margin:0;
   }
 
+/** Fixer le bottom en bas de page */
+#app{ 
+    height:100vh;
+    display:flex; 
+    flex-direction:column; 
+}
+/** Fixer le bottom en bas de page */
+footer{
+    margin-top:auto; 
+}
+
   .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
