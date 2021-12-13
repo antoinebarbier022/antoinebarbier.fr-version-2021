@@ -77,7 +77,7 @@
                 { id: 7, 
                     name:"Plateforme de gestion de stages pour la Faculté des Sciences",
                     langage:"Angular",
-                    urlImage: "plateforme-gestion-stage.png", 
+                    urlImage: "projet-plateforme-stages/infoStage.png", 
                     alt: "Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier" 
                 },
                 { id: 6, 

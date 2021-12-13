@@ -152,16 +152,14 @@ export default defineComponent( {
             { id: 7, 
                 name:"Plateforme de gestion de stages pour la Faculté des Sciences",
                 annee:"2020",
-                description:"Projet TER, faculté des sciences de Montpellier",
+                description:"",
                 images: [
-                    {
-                        image: "plateforme-gestion-stage.png",
-                        alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
-                        },
-                        {
-                        image: "projet-reseau-social/androidApp.png",
-                        alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"
-                        }
+                    {image: "projet-plateforme-stages/infoStage.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
+                    {image: "projet-plateforme-stages/infoStage1.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
+                    {image: "projet-plateforme-stages/infoStage2.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
+                    {image: "projet-plateforme-stages/infoStage3.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
+                    {image: "projet-plateforme-stages/infoStage4.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
+                    {image: "projet-plateforme-stages/infoStage5.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
                     ],
                 tags:[
                     {name: "MEAN"},
