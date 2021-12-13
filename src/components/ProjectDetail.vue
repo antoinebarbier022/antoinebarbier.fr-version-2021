@@ -118,7 +118,9 @@ export default defineComponent( {
                     name:"Implémentation d'un moteur de requêtes en étoile",
                     annee:"2021",
                 description:"Membres du groupe : Antoine Barbier et Djamel Benameur.",
-                membres:[{name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}, {name:"Djamel Benameur", url:""}],
+                membres:[
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},
+                    {name:"Djamel Benameur", url:"https://fr.linkedin.com/in/djamel-benameur-9a1704130"}],
                 images: [
                     {
                         image: "projet-moteur-requetes/sparql.png",
@@ -335,7 +337,7 @@ export default defineComponent( {
         parserDescription : function (){
             var text = this.project?.description;
             for(const membre of this.project?.membres){
-                text = text.replace(membre.name,`<a href="${membre.url}">$&</a>`);
+                text = text.replace(membre.name,`<a href="${membre.url} "target="_blank" title="${membre.url}" >$&</a>`);
             }
             return text
         }
