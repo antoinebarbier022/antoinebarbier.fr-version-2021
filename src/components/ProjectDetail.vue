@@ -19,14 +19,13 @@
                 
                 <h2>{{project?.name}} </h2>
                 <h3>{{ project?.annee ? project?.annee : "Date inconnu" }}</h3>
-                <p v-html="project?.description"></p>
-                <p v-if="!project?.description" class="no-description noselect">Il n'y a pas encore de description pour ce projet.</p>
-                <div class="tag-tags">
+                <p v-html="parserDescription"></p>
+                <p v-if="!parserDescription" class="no-description noselect">Il n'y a pas encore de description pour ce projet.</p>
+                <div class="tags">
                     <span v-for="tag in project?.tags" v-bind:key="tag.id">
                         #{{ tag.name.replace(" ", "")}}
                     </span>
                 </div>
-                
             </div>          
             <div class="project-links">
                 <a v-if="project?.website" class="button-link" :href="project?.website" target="_blank" :title="project?.website">
@@ -91,13 +90,15 @@ export default defineComponent( {
             cover: true,
             isNavigation: true,
         },
-
         // En attendant d'utiliser VueX pour passer des données dans l'application
         projectList: [
             { id: 10, 
                     name:"Application marchée en ligne",
                     annee:"2021",
                     description:"",
+                    membres:[
+                        {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}
+                        ],
                     images: [
                         {
                             image: "projet-marchee-en-ligne/marchee-en-ligne.png",
@@ -116,7 +117,8 @@ export default defineComponent( {
                 { id: 9, 
                     name:"Implémentation d'un moteur de requêtes en étoile",
                     annee:"2021",
-                description:"",
+                description:"Bonjour Antoine Barbier et Djamel Benameur, comment allez vous ?",
+                membres:[{name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}, {name:"Djamel Benameur", url:""}],
                 images: [
                     {
                         image: "projet-moteur-requetes/sparql.png",
@@ -135,6 +137,7 @@ export default defineComponent( {
                     name:"Application Méteo",
                     annee:"2021",
                 description:"",
+                membres:[{name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}],
                 images: [
                     {
                         image: "projet-meteo-app/meteo.png",
@@ -153,6 +156,10 @@ export default defineComponent( {
                 name:"Plateforme de gestion de stages pour la Faculté des Sciences",
                 annee:"2020",
                 description:"",
+                membres:[
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},
+                    {name:"Antoine Brahimi", url:"https://antoinebrah.github.io"}, 
+                    {name:"Antoine Brahimi", url:"https://mokhtaraissaoui.fr"}],
                 images: [
                     {image: "projet-plateforme-stages/infoStage.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
                     {image: "projet-plateforme-stages/infoStage1.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
@@ -177,6 +184,8 @@ export default defineComponent( {
                 name:"Réseau Social - JAVA - Android",
                 annee:"2020",
                 description:"",
+                membres:[
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},{name:"Antoine Brahimi", url:"https://antoinebrah.github.io"},],
                 images: [
                     {image: "projet-reseau-social/androidApp.png",alt:"Réseau Social Android Socializing"},
                     {image: "projet-reseau-social/android1.png",alt:"Réseau Social Android Socializing"},
@@ -201,6 +210,7 @@ export default defineComponent( {
                 name:"Mouflaquettes.fr",
                 annee:"2020",
                 description:"",
+                membres:[{name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}],
                 images: [
                     {
                         image: "projet-mouflaquettes/mouflaquettes.png",
@@ -218,6 +228,7 @@ export default defineComponent( {
                 name:"Projet de programmation concurente",
                 annee:"",
                 description:"",
+                membres:[{name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}],
                 images: [
                     {
                         image: "projet-concurente.png",
@@ -235,6 +246,12 @@ export default defineComponent( {
                 name:"Algorithme de résolution du casse tête : SlitherLink",
                 annee:"2019",
                 description:"",
+                membres:[
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},
+                    {name:"Djamel Benameur", url:""}, 
+                    {name:"Timoléon Demas", url:""}, 
+                    {name:"Matthieu Commins", url:""},
+                    {name:"Thomas Zaragoza", url:""}],
                 images: [
                     {
                         image: "SlitherLink.png",
@@ -242,16 +259,22 @@ export default defineComponent( {
                         }
                 ],
                 tags:[
-                    {name:"C++"}
+                    {name:"C++"},
+                    {name:"Doxygene"}
                 ],
                 website : "" ,
-                gitlab : "" ,
+                gitlab : "https://gitlab.com/An_toine/resolution-slitherlink" ,
                 github : "" ,
             },
             { id: 2, 
                 name:"Projet Casse brique en ligne de commande",
                 annee:"2018",
-                description:"",
+                description:"Ce projet universitaire a été développé par Antoine Barbier, Djamel Benameur, Timoléon Demas et Matthieu Commins.",
+                membres:[
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},
+                    {name:"Djamel Benameur", url:""}, 
+                    {name:"Timoléon Demas", url:""}, 
+                    {name:"Matthieu Commins", url:""}],
                 images: [
                     {
                         image: "casseBrique.png",
@@ -269,7 +292,10 @@ export default defineComponent( {
                 name:"Jeu vidéo Bébert - Constructeur de niveau",
                 langage:"Python",
                 annee:"2017",
-                description:`Ce projet de jeu vidéo de style Mario Bros a été développé en Python avec mon ami <a href="https://raphaelgimenez.fr" target="_blank">Raphael Gimenez.</a>`,
+                description:`Ce projet de jeu vidéo de style Mario Bros a été développé en Python avec mon ami Raphael Gimenez.</a>`,
+                membres:[
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},
+                    {name:"Raphael Gimenez", url:"https://raphaelgimenez.fr"}],
                 images: [
                     {image: "projet-bebert/bebertProject.png", alt:"Jeu vidéo Bébert - Constructeur de niveau"},
                     {image: "projet-bebert/splashscreen.png", alt:"Jeu vidéo Bébert - Constructeur de niveau"},
@@ -290,6 +316,13 @@ export default defineComponent( {
     },computed:{
         project : function () {
             return this.projectList.filter( e =>  e.id == this.$route.params.id)[0];
+        },
+        parserDescription : function (){
+            var text = this.project?.description;
+            for(const membre of this.project?.membres){
+                text = text.replace(membre.name,`<a href="${membre.url}">$&</a>`);
+            }
+            return text
         }
     },
     mounted () {
@@ -428,7 +461,7 @@ p.no-description{
     font-weight: 300;
     font-style: italic;
 }
-.tag-tags>span{
+.tags>span{
     text-transform:lowercase;
     padding-right:5px;
     color:var(--secondary-color);
@@ -497,6 +530,10 @@ a.button-link:focus{
 .back-button:hover{
     cursor: pointer;
     background: rgba(255, 255, 255, 0.048);
+}
+
+p>a:hover{
+    text-decoration: underline;
 }
 
 
