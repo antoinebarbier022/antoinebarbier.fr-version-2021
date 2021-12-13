@@ -40,4 +40,9 @@
     max-height:200px;
 }
 
+.project-title{
+    margin:15px;
+    color: var(--secondary-text-color);
+}
+
 </style>

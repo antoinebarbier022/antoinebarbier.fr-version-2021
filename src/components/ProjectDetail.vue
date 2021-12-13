@@ -54,7 +54,7 @@
     <div class="back-button-container">
     
         <a @click="$router.go(-1)">
-            <span class="back-button noselect">Retour aux autres projets</span>
+            <span class="back-button noselect">Retour - Voir les autres projets</span>
         </a>
            
 
@@ -94,7 +94,62 @@ export default defineComponent( {
 
         // En attendant d'utiliser VueX pour passer des données dans l'application
         projectList: [
-            { id: 0, 
+            { id: 10, 
+                    name:"Application marchée en ligne",
+                    annee:"2021",
+                    description:"",
+                    images: [
+                        {
+                            image: "projet-marchee-en-ligne/marchee-en-ligne.png",
+                            alt:"Application Marchée en ligne"
+                            },
+                            
+                        ],
+                    tags:[
+                        {name: "Flutter"},
+                        {name: "Firebase"},
+                    ],
+                    website : "" ,
+                    gitlab : "https://gitlab.com/An_toine/app-marche-en-ligne" ,
+                    github : "https://github.com/antoinebarbier022/app-marche-en-ligne" ,
+                },
+                { id: 9, 
+                    name:"Implémentation d'un moteur de requêtes en étoile",
+                    annee:"2021",
+                description:"",
+                images: [
+                    {
+                        image: "projet-moteur-requetes/sparql.png",
+                        alt:"Sparql"
+                        },
+                    ],
+                tags:[
+                    {name: "Java"},
+                    {name: "Python"},
+                ],
+                website : "" ,
+                gitlab : "https://gitlab.com/An_toine/implementation-d-un-mini-moteur-de-requetes-en-etoile" ,
+                github : "https://github.com/antoinebarbier022/implementation-d-un-mini-moteur-de-requetes-en-etoile" ,
+                },
+                { id: 8, 
+                    name:"Application Méteo",
+                    annee:"2021",
+                description:"",
+                images: [
+                    {
+                        image: "projet-meteo-app/meteo.png",
+                        alt:"Application Méteo connecté à une API"
+                        },
+                    ],
+                tags:[
+                    {name: "Flutter"},
+                    {name: "API"},
+                ],
+                website : "" ,
+                gitlab : "https://gitlab.com/An_toine/hai912i-td-antoine-barbier/-/tree/main/weather_app" ,
+                github : "https://github.com/antoinebarbier022/td-mobile-flutter/tree/main/weather_app" ,
+                },
+            { id: 7, 
                 name:"Plateforme de gestion de stages pour la Faculté des Sciences",
                 annee:"2020",
                 description:"Projet TER, faculté des sciences de Montpellier",
@@ -120,7 +175,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/m1-ter-stageinfo" ,
                 github : "https://github.com/antoinebarbier022/M1-TER-stageInfo" ,
             },
-            { id: 1, 
+            { id: 6, 
                 name:"Réseau Social - JAVA - Android",
                 annee:"2020",
                 description:"",
@@ -144,7 +199,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/projet_dev_android_hmin205" ,
                 github : "https://github.com/antoinebarbier022/reseau-social-android" ,
             },
-            { id: 2, 
+            { id: 5, 
                 name:"Mouflaquettes.fr",
                 annee:"2020",
                 description:"",
@@ -161,7 +216,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/mouflaquettes.fr" ,
                 github : "" ,
             },
-            { id: 3, 
+            { id: 4, 
                 name:"Projet de programmation concurente",
                 annee:"",
                 description:"",
@@ -178,7 +233,7 @@ export default defineComponent( {
                 gitlab : "" ,
                 github : "" ,
             },
-            { id: 4, 
+            { id: 3, 
                 name:"Algorithme de résolution du casse tête : SlitherLink",
                 annee:"2019",
                 description:"",
@@ -195,7 +250,7 @@ export default defineComponent( {
                 gitlab : "" ,
                 github : "" ,
             },
-            { id: 5, 
+            { id: 2, 
                 name:"Projet Casse brique en ligne de commande",
                 annee:"2018",
                 description:"",
@@ -212,7 +267,7 @@ export default defineComponent( {
                 gitlab : "https://gitlab.com/An_toine/l2-casse-brique" ,
                 github : "" ,
             },
-            { id: 6, 
+            { id: 1, 
                 name:"Jeu vidéo Bébert - Constructeur de niveau",
                 langage:"Python",
                 annee:"2017",
@@ -416,7 +471,8 @@ a.button-link:focus{
 }
 
 .back-button-container{
-
+    display: flex;
+    justify-content: center;
     margin-top:120px;
     margin-bottom:120px; 
 }

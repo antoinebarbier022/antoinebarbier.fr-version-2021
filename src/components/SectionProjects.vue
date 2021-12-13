@@ -55,43 +55,62 @@
                     }
                 },
                 projectList: [
-                { id: 0, 
+
+                { id: 10, 
+                    name:"Application marchée en ligne",
+                    langage:"Flutter",
+                    urlImage: "projet-marchee-en-ligne/marchee-en-ligne.png", 
+                    alt: "Application Marchée en ligne" 
+                },
+                { id: 9, 
+                    name:"Implémentation d'un moteur de requêtes en étoile",
+                    langage:"Java",
+                    urlImage: "projet-moteur-requetes/sparql.png", 
+                    alt: "Sparql" 
+                },
+                { id: 8, 
+                    name:"Application Méteo",
+                    langage:"Flutter",
+                    urlImage: "projet-meteo-app/meteo.png", 
+                    alt: "Application météo connecté à une API" 
+                },
+                { id: 7, 
                     name:"Plateforme de gestion de stages pour la Faculté des Sciences",
                     langage:"Angular",
                     urlImage: "plateforme-gestion-stage.png", 
                     alt: "Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier" 
                 },
-                { id: 1, 
+                { id: 6, 
                     name:"Réseau Social",
                     langage:"JAVA - Android",
                     urlImage: "projet-reseau-social/androidApp.png", 
                     alt: "Réseau Social Android Socializing" 
                 },
-                { id: 2, 
+                { id: 5, 
                     name:"Mouflaquettes.fr",
                     langage:"VueJs",
                     urlImage: "projet-mouflaquettes/mouflaquettes.png", 
                     alt: "Site web des mouflaquettes" 
                 },
-                { id: 3, 
+                { id: 4, 
                     name:"Projet de programmation concurente",
                     langage:"C++",
                     urlImage: "projet-concurente.png", 
                     alt: "Projet de programmation concurente" 
                 },
-                { id: 4, 
+                { id: 3, 
                     name:"Algorithme de résolution du casse tête : SlitherLink",
                     langage:"C++",
                     urlImage: "SlitherLink.png", 
                     alt: "Programme de résolution de SLitherLink" 
                 },
-                { id: 5, 
+                { id: 2, 
                     name:"Projet Casse brique en ligne de commande",
                     langage:"C++",
                     urlImage: "casseBrique.png", 
                     alt: "Projet Casse brique en ligne de commande" 
                 },
-                { id: 6, 
+                { id: 1, 
                     name:"Jeu vidéo Bébert - Constructeur de niveau",
                     langage:"Python",
                     urlImage: "projet-bebert/bebertProject.png", 
@@ -109,11 +128,6 @@
 #Projects-section{
     position: relative;
     width:100%;
-}
-
-.project-title{
-    margin:15px;
-    color: var(--secondary-text-color);
 }
 
 .slider{
@@ -150,7 +164,7 @@
 
 
 .splide__slide{
-    filter: grayscale(1) brightness(1.1);
+    filter: grayscale(0.8);
     /*background-color: rgba(196, 196, 196, 0.3);*/
     transform: scale(0.98, 0.98);
     -webkit-transform:scale(0.98, 0.98);
@@ -159,7 +173,7 @@
 
 .splide__slide:hover{
     /*background-color: rgba(156, 49, 49, 0.3);*/
-    filter: grayscale(0) brightness(1);
+    filter: grayscale(0);
     transform: scale(1, 1);
     -webkit-transform:scale(1, 1);
 }
