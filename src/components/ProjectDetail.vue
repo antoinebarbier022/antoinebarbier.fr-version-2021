@@ -117,7 +117,7 @@ export default defineComponent( {
                 { id: 9, 
                     name:"Implémentation d'un moteur de requêtes en étoile",
                     annee:"2021",
-                description:"Bonjour Antoine Barbier et Djamel Benameur, comment allez vous ?",
+                description:"Membres du groupe : Antoine Barbier et Djamel Benameur.",
                 membres:[{name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}, {name:"Djamel Benameur", url:""}],
                 images: [
                     {
@@ -137,7 +137,9 @@ export default defineComponent( {
                     name:"Application Méteo",
                     annee:"2021",
                 description:"",
-                membres:[{name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}],
+                membres:[
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}
+                    ],
                 images: [
                     {
                         image: "projet-meteo-app/meteo.png",
@@ -147,6 +149,8 @@ export default defineComponent( {
                 tags:[
                     {name: "Flutter"},
                     {name: "API"},
+                    {name: "openweather"},
+                    
                 ],
                 website : "" ,
                 gitlab : "https://gitlab.com/An_toine/hai912i-td-antoine-barbier/-/tree/main/weather_app" ,
@@ -155,11 +159,12 @@ export default defineComponent( {
             { id: 7, 
                 name:"Plateforme de gestion de stages pour la Faculté des Sciences",
                 annee:"2020",
-                description:"",
+                description:`Projet TER (Travail d'Étude et de Recherche) d'une durée de 4 mois. <br> 
+                            Les membres du projets sont : Antoine Barbier, El Mokhtar Aissaoui et Antoine Brahimi.`,
                 membres:[
                     {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},
                     {name:"Antoine Brahimi", url:"https://antoinebrah.github.io"}, 
-                    {name:"Antoine Brahimi", url:"https://mokhtaraissaoui.fr"}],
+                    {name:"El Mokhtar Aissaoui", url:"https://mokhtaraissaoui.fr"}],
                 images: [
                     {image: "projet-plateforme-stages/infoStage.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
                     {image: "projet-plateforme-stages/infoStage1.png", alt:"Plateforme de gestion de stage Informatique pour la faculté des sciences de Montpellier"},
@@ -185,7 +190,8 @@ export default defineComponent( {
                 annee:"2020",
                 description:"",
                 membres:[
-                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},{name:"Antoine Brahimi", url:"https://antoinebrah.github.io"},],
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},
+                    {name:"Antoine Brahimi", url:"https://antoinebrah.github.io"},],
                 images: [
                     {image: "projet-reseau-social/androidApp.png",alt:"Réseau Social Android Socializing"},
                     {image: "projet-reseau-social/android1.png",alt:"Réseau Social Android Socializing"},
@@ -210,7 +216,9 @@ export default defineComponent( {
                 name:"Mouflaquettes.fr",
                 annee:"2020",
                 description:"",
-                membres:[{name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}],
+                membres:[
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}
+                    ],
                 images: [
                     {
                         image: "projet-mouflaquettes/mouflaquettes.png",
@@ -226,9 +234,11 @@ export default defineComponent( {
             },
             { id: 4, 
                 name:"Projet de programmation concurente",
-                annee:"",
+                annee:"2020",
                 description:"",
-                membres:[{name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}],
+                membres:[
+                    {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"}
+                    ],
                 images: [
                     {
                         image: "projet-concurente.png",
@@ -236,22 +246,26 @@ export default defineComponent( {
                         }
                 ],
                 tags:[
-                    {name:"C++"}
+                    {name:"C++"},
+                    {name:"Threads"},
+                    {name:"Semaphores"},
+                    {name:"ICPC"},
+
                 ],
                 website : "" ,
-                gitlab : "" ,
+                gitlab : "https://gitlab.com/An_toine/hmin105m-projet-systeme-de-reservation-distribue" ,
                 github : "" ,
             },
             { id: 3, 
                 name:"Algorithme de résolution du casse tête : SlitherLink",
                 annee:"2019",
-                description:"",
+                description:"Membres du projets : Antoine Barbier, Djamel Benameur, Timoléon Demas, Matthieu Commins, Thomas Zaragoza.",
                 membres:[
                     {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},
-                    {name:"Djamel Benameur", url:""}, 
+                    {name:"Djamel Benameur", url:"https://fr.linkedin.com/in/djamel-benameur-9a1704130"}, 
                     {name:"Timoléon Demas", url:""}, 
-                    {name:"Matthieu Commins", url:""},
-                    {name:"Thomas Zaragoza", url:""}],
+                    {name:"Matthieu Commins", url:"https://fr.linkedin.com/in/matthieu-commins-3651a1159"},
+                    {name:"Thomas Zaragoza", url:"https://fr.linkedin.com/in/thomas-zaragoza-bab653160"}],
                 images: [
                     {
                         image: "SlitherLink.png",
@@ -260,7 +274,7 @@ export default defineComponent( {
                 ],
                 tags:[
                     {name:"C++"},
-                    {name:"Doxygene"}
+                    {name:"Doxygen"}
                 ],
                 website : "" ,
                 gitlab : "https://gitlab.com/An_toine/resolution-slitherlink" ,
@@ -272,9 +286,9 @@ export default defineComponent( {
                 description:"Ce projet universitaire a été développé par Antoine Barbier, Djamel Benameur, Timoléon Demas et Matthieu Commins.",
                 membres:[
                     {name:"Antoine Barbier", url:"https://www.antoinebarbier.fr"},
-                    {name:"Djamel Benameur", url:""}, 
+                    {name:"Djamel Benameur", url:"https://fr.linkedin.com/in/djamel-benameur-9a1704130"}, 
                     {name:"Timoléon Demas", url:""}, 
-                    {name:"Matthieu Commins", url:""}],
+                    {name:"Matthieu Commins", url:"https://fr.linkedin.com/in/matthieu-commins-3651a1159"}],
                 images: [
                     {
                         image: "casseBrique.png",
@@ -282,7 +296,8 @@ export default defineComponent( {
                         }
                 ],
                 tags:[
-                    {name:"C++"}
+                    {name:"C++"},
+                    {name:"ncurses"}
                 ],
                 website : "" ,
                 gitlab : "https://gitlab.com/An_toine/l2-casse-brique" ,
