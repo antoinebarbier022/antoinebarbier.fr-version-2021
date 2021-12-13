@@ -355,6 +355,14 @@ export default defineComponent( {
         max-width: 700px;
         max-height: 300px;
     }
+    @media (max-width:900px) {
+        .splide__slide img {
+            width: auto;
+            height: auto;
+            max-width: 600px;
+            max-height: 270px;
+        }
+    }
 
     @media (max-width:400px) {
         .splide__slide img {
@@ -440,6 +448,7 @@ p.no-description{
     margin-top:60px;
 }
 a.button-link{
+    
     display:flex;
     justify-content: center;
     align-items: center;
@@ -447,6 +456,7 @@ a.button-link{
     border-radius: 5px;
     height:40px;
     width: 100%;
+    min-width:100px;
     background: var(--secondary-color);
     font-style: normal;
     font-size: 0.8rem;

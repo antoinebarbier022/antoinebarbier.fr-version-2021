@@ -8,7 +8,7 @@
                     <h4>Suivre mon travail</h4>
                     <ul>
                         <li><a href="https://www.instagram.com/antoineb_dev/" target="_blank" title="Instagram : @antoineb_dev">Instagram</a></li>
-                                                <li><a href="https://www.instagram.com/antoineb_dev/" target="_blank" title="Dribbble : @An_toine">Dribbble</a></li>
+                        <li><a href="https://dribbble.com/An_toine" target="_blank" title="Dribbble : @An_toine">Dribbble</a></li>
                         <li><a href="https://gitlab.com/An_toine" target="_blank" title="GitLab : @An_toine">GitLab</a></li>
                         <li><a href="https://github.com/antoinebarbier022" target="_blank" title="Github : @antoinebarbier022">Github</a></li>
                     
