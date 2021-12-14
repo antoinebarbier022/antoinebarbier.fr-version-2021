@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && cp ./dist/index.html ./dist/src"
+    "build": "vue-cli-service build && cp ./dist/index.html ./dist/src && cp ./public/.htaccess ./dist/src"
   },
   "dependencies": {
     "@splidejs/vue-splide": "^0.5.15",
