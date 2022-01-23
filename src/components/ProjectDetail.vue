@@ -1,15 +1,16 @@
 <template>
+<div>
     <div class="project-detail-container">
         <div class="thumbnail-slider">
             <Splide ref="main" id="main-slider" :options="optionsMain">
                 <SplideSlide v-for="element in project?.images" v-bind:key="element.id">
-                    <img :src="require(`../assets/images/${element.image}`)" :alt="element.alt">
+                    <img :src="require(`../../public/assets/images/${element.image}`)" :alt="element.alt">
                 </SplideSlide>
             </Splide>
 
             <Splide v-if="project?.images.length > 1" ref="thumbnails" id="thumbnails" :options="optionsThumbnails">
                 <SplideSlide class="thumb-slide" v-for="element in project?.images" v-bind:key="element.id">
-                    <img :src="require(`../assets/images/${element.image}`)" :alt="element.alt">
+                    <img :src="require(`../../public/assets/images/${element.image}`)" :alt="element.alt">
                 </SplideSlide>
             </Splide>
 
@@ -59,7 +60,7 @@
            
 
     </div>
-
+</div>
 </template>
 
 <script>

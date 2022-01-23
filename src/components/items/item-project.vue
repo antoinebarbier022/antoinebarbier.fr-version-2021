@@ -3,7 +3,7 @@
     <router-link :to="{ name: 'project', params: { id: project_item_prop.id }}">
         <div class="slide">
             <figure>
-                <img v-bind:src="require(`../../assets/images/${project_item_prop.urlImage}`)" v-bind:alt="project_item_prop.alt">
+                <img v-bind:src="require(`../../../public/assets/images/${project_item_prop.urlImage}`)" v-bind:alt="project_item_prop.alt">
             </figure>
             <span class="project-title">
                 {{ project_item_prop.name }} 
