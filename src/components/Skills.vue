@@ -41,24 +41,24 @@ import SkillItem from './items/item-skill.vue'
             pourcent:"50"
         },
         {id:4,
+            name:"React",
+            level:"Intermédiaire",
+            pourcent:"60"
+        },
+        {id:5,
             name:"Java (Android Studio)",
             level:"Débutant",
             pourcent:"60"
         },
-        {id:5,
+        {id:6,
             name:"ThreeJs",
             level:"Débutant",
-            pourcent:"60"
-        },
-        {id:6,
-            name:"Flutter",
-            level:"Débutant",
-            pourcent:"60"
+            pourcent:"30"
         },
         {id:7,
-            name:"C/C++",
+            name:"Flutter",
             level:"Débutant",
-            pourcent:"60"
+            pourcent:"40"
         },
         {id:8,
             name:"SQL",
@@ -151,7 +151,7 @@ min-width: 200px;
 .skill-progress-bar{
     width:100%;
     height: 100%;
-    background: linear-gradient(90deg, var(--secondary-color) 70%, transparent 100%);
+    background: linear-gradient(90deg, var(--secondary-color) 30%, transparent 100%);
 
 
     border-radius: 5px;

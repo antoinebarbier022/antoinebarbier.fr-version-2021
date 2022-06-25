@@ -17,7 +17,7 @@ import SkillItem from './items/item-skill.vue'
         components:{
             SkillItem
         },
-        data() {
+       data() {
             return {
                 skillList: [
         {id:0,
@@ -27,8 +27,8 @@ import SkillItem from './items/item-skill.vue'
         },
         {id:1,
             name:"Javascript",
-            level:"Débutant",
-            pourcent:"50"
+            level:"Intermédiaire",
+            pourcent:"60"
         },
         {id:2,
             name:"Angular",
@@ -41,24 +41,24 @@ import SkillItem from './items/item-skill.vue'
             pourcent:"50"
         },
         {id:4,
+            name:"React",
+            level:"Intermédiaire",
+            pourcent:"80"
+        },
+        {id:5,
             name:"Java (Android Studio)",
             level:"Débutant",
             pourcent:"60"
         },
-        {id:5,
+        {id:6,
             name:"ThreeJs",
             level:"Débutant",
-            pourcent:"60"
-        },
-        {id:6,
-            name:"Flutter",
-            level:"Débutant",
-            pourcent:"60"
+            pourcent:"20"
         },
         {id:7,
-            name:"C/C++",
+            name:"Flutter",
             level:"Débutant",
-            pourcent:"60"
+            pourcent:"40"
         },
         {id:8,
             name:"SQL",

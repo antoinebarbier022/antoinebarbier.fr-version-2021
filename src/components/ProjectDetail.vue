@@ -54,8 +54,8 @@
 
     <div class="back-button-container">
     
-        <a @click="$router.go(-1)">
-            <span class="back-button noselect">Retour - Voir les autres projets</span>
+        <a @click="$router.go(-1)" role="link" class="back-button noselect" aria-label="Retour sur la page précédente">
+            Retour - Voir les autres projets
         </a>
            
 
