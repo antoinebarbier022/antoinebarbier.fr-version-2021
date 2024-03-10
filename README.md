@@ -2,7 +2,7 @@
 
 Lien de mon portfolio : [https://www.antoinebarbier.fr](https://www.antoinebarbier.fr)
 
-![Page d'accueil](images-readme/home.png)
+![Page d'accueil](docs/home.png)
 ## Project setup
 ```
 npm install

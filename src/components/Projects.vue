@@ -16,7 +16,7 @@
     </section>
 </template>
 
-<script>
+<script >
     import ProjectItem from './items/item-project.vue'
     import { Splide, SplideSlide } from '@splidejs/vue-splide';
 

@@ -9,7 +9,7 @@
 </template>
 
 
-<script>
+<script >
 
 import Header from '../components/Header.vue'
 import SectionPresentation from '../components/SectionPresentation.vue'
@@ -37,6 +37,4 @@ export default {
 *{
   scroll-behavior: smooth;
 }
-
-
 </style>

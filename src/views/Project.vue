@@ -7,7 +7,7 @@
 </template>
 
 
-<script>
+<script >
   import Menu from '../components/Menu.vue'
   import ProjectDetail from '../components/ProjectDetail.vue'
   import Footer from '../components/Footer.vue'

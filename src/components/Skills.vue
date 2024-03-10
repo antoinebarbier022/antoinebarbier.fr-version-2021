@@ -10,7 +10,7 @@
     </section>
 </template>
 
-<script>
+<script >
 import SkillItem from './items/item-skill.vue'
     export default {
         name: 'Skills',

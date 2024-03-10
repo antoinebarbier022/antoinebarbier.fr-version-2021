@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <router-view/>
-    
   </div>
 </template>
 
@@ -17,7 +16,7 @@ export default {
 <style>
   @font-face {
       font-family: "Reenie Beanie";
-      src: url("../public/assets/fonts/Reenie_Beanie/ReenieBeanie-Regular.ttf") format("truetype");
+      src: url("/assets/fonts/Reenie_Beanie/ReenieBeanie-Regular.ttf") format("truetype");
   }
 
   html, body{

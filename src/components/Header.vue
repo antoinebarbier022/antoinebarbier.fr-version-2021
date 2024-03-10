@@ -1,13 +1,13 @@
 <template>
   <header id="header-menu">
         <figure class="mini-profile-image">
-            <img src="../../public/assets/images/IMG_9614.jpg" alt="">
+            <img src="/assets/images/IMG_9614.jpg" alt="">
         </figure>
         <h1>Antoine Barbier</h1>
     </header>
 </template>
 
-<script>
+<script >
     export default {
         name: 'Header'
     }

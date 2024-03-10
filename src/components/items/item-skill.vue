@@ -11,7 +11,7 @@
 </template>
 
 
-<script>
+<script >
     export default {
         name: 'SkillItem',
         props: ["skill_item_prop"],

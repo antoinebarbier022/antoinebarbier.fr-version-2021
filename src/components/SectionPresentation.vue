@@ -5,7 +5,7 @@
                     <!--
                     <svg id="bg-bubble" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1025.2 931.3" style="opacity: 1; visibility: inherit; /* transform: translate(-683px, -406.25px); */"><path id="bg-circle" d="M527.03 768.39 C743.28 756.67 910.1 607.66 908.29 410.23 905.43 197.01 716.1 59.5 486.18 59.5 256.26 59.5 66.22 198.35 66.22 409.57 66.22 506.45 165.73 542.48 227.13 604.79 308.84 692 386.41 780.12 527.03 768.39 " data-original="M493.6 766.8c230 0 415.6-143.5 415.6-351.1S724.2 64.5 494.3 64.5 77.9 208.1 77.9 415.7c0 83.5 101 114.6 152 177 75.8 92.8 126.1 174.1 263.7 174.1z"></path></svg>
                     -->
-                    <img src="../../public/assets/images/profileImage.png" alt="">
+                    <img src="/assets/images/profileImage.png" alt="">
                 </figure>
             </div>
             <div class="content">
@@ -40,7 +40,7 @@
 
 </template>
 
-<script>
+<script >
     export default {
         name: 'SectionPresentation'
     }
