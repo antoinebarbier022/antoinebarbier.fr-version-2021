@@ -18,7 +18,7 @@
                 <div>
                     <h4>Curriculum Vitae </h4>
                     <ul>
-                        <li> <a href="https://github.com/antoinebarbier022/antoinebarbier.fr-version-2021/blob/main/public/assets/files/AntoineBarbier_CV_Stage.pdf" target="_blank" >Voir mon CV</a></li>
+                        <li> <a href="/assets/files/AntoineBarbier_CV_Stage.pdf" target="_blank" >Voir mon CV</a></li>
                         <!--<li> <a href="../assets/files/AntoineBarbier_CV_Stage.pdf" target="_blank" >Ouvrir le CV dans le navigateur web</a></li>-->
                         <!--<li> <a href="../assets/files/AntoineBarbier_CV_Stage.pdf" download="CV_AntoineBarbier">Télécharger le CV</a></li>-->
                     </ul>
